@@ -22,7 +22,7 @@ class Navbar extends Component {
                           <div className={"ml-auto " + classes.navList}>
                              <i className="fas fa-bars"/>
 
-                             <ul className={"navbar-nav ml-auto " + classes.navList}>
+                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item active">
                                    <a className="nav-link" href="#">হোম</a>
                                 </li>

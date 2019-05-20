@@ -2,31 +2,42 @@
   border: none;
   padding: 10px 80px;
   font-size: 1.3rem;
-  border-radius: 10px;
+  border-radius: 50px;
   background: rgba(0, 0, 0, 0);
   box-sizing: content-box;
+  transition: all 0.25s ease-in-out;
 }
 
 .cbtn-orange {
-  background: linear-gradient(150deg, #ffe259, #ffa751);
-  transition: all 0.25s ease-in-out;
+  background-image: linear-gradient(150deg, #dbcd1e, #dbb000, #fb8d00, #FB5A00);
+  background-size: 150% 100%;
+  box-shadow: 0px 5px 15px rgba(229, 140, 12, 0.2);
 }
 
 .cbtn-orange:hover {
-  background: linear-gradient(100deg, #f7db56, #f7a24e);
-  box-shadow: 0px 5px 15px rgba(255, 167, 81, 0.2);
-  transition: all 0.25s;
+  background-position: 100% 0;
+  box-shadow: 0px 5px 15px rgba(229, 140, 12, 0.4);
 }
 
+.cbtn-orange:focus {
+  outline: none;
+}
+
+
+
 .cbtn-outline-orange {
-  color: #FFCF49;
-  border: 2px solid #f7db56;
-  transition: all 0.25s ease-in-out;
+  color: #fe8200;
+  position: relative;
+  border: 2px solid #fe8200;
 }
 
 .cbtn-outline-orange:hover {
   color: black;
-  background: linear-gradient(100deg, #f7db56, #f7a24e);
-  //box-shadow: 0px 5px 15px rgba(255, 167, 81, 0.2);
-  transition: all 0.25s;
+  position: relative;
+  border: 2px solid #fe8200;
+  background-color: #fe8200;
+}
+
+.cbtn-outline-orange:focus {
+  outline: none;
 }
