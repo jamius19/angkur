@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'SolaimanLipi';
+    src: url('hinted-subset-SolaimanLipiNormal.eot');
+    src: local('SolaimanLipi'), local('SolaimanLipiNormal'),
+    url('hinted-subset-SolaimanLipiNormal.eot?#iefix') format('embedded-opentype'),
+    url('hinted-subset-SolaimanLipiNormal.woff2') format('woff2'),
+    url('hinted-subset-SolaimanLipiNormal.woff') format('woff'),
+    url('hinted-subset-SolaimanLipiNormal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
