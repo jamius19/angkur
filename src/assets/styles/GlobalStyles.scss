@@ -1,0 +1,32 @@
+.cbtn {
+  border: none;
+  padding: 10px 80px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  box-sizing: content-box;
+}
+
+.cbtn-orange {
+  background: linear-gradient(150deg, #ffe259, #ffa751);
+  transition: all 0.25s ease-in-out;
+}
+
+.cbtn-orange:hover {
+  background: linear-gradient(100deg, #f7db56, #f7a24e);
+  box-shadow: 0px 5px 15px rgba(255, 167, 81, 0.2);
+  transition: all 0.25s;
+}
+
+.cbtn-outline-orange {
+  color: #FFCF49;
+  border: 2px solid #f7db56;
+  transition: all 0.25s ease-in-out;
+}
+
+.cbtn-outline-orange:hover {
+  color: black;
+  background: linear-gradient(100deg, #f7db56, #f7a24e);
+  //box-shadow: 0px 5px 15px rgba(255, 167, 81, 0.2);
+  transition: all 0.25s;
+}

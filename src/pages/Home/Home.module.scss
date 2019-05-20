@@ -1,0 +1,113 @@
+@import "../../assets/styles/Variables";
+
+.HeroBg {
+  background-image: url("assets/bg_gradient.jpg");
+  width: 100%;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.heroTitle {
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+
+.coaButtons {
+  margin-bottom: 20vh;
+}
+
+.cbtn:first-of-type {
+  margin-bottom: 15px;
+}
+
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .heroTitle {
+    font-size: 2.3rem;
+  }
+}
+
+
+@media only screen and (min-width: $lg) {
+  .cbtn:first-of-type {
+    margin-bottom: 0px;
+    margin-right: 20px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+
+/*
+@media screen and (orientation: landscape) {
+  @media (max-height: $sm) {
+    .heroTitle {
+      margin-top: 70px;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .coaButtons .cbtn {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  .heroTitle {
+    font-size: 1.7rem;
+    margin-top: 100px;
+  }
+
+  .coaButtons {
+    margin-bottom: 10vh;
+
+    .cbtn {
+      margin-right: 20px;
+    }
+
+  }
+}
+
+@media (max-width: $lg) {
+  .heroTitle {
+    font-size: 1.7rem;
+    margin-top: 100px;
+  }
+
+  .cbtn {
+    margin-right: 20px;
+  }
+
+  .coaButtons {
+    margin-bottom: 10vh;
+  }
+}
+
+@media (max-width: $md) {
+  .heroTitle {
+    font-size: 1.7rem;
+    margin-top: 100px;
+  }
+
+  .cbtn {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+
+@media (max-width: $psm) {
+  .heroTitle {
+    font-size: 1.6rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+*/
+
+
+
