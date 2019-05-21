@@ -2,9 +2,28 @@ import React, {Component} from 'react';
 import Navbar from "../../components/Nav/Navbar";
 import styles from './Home.module.scss';
 import {Spring, config} from 'react-spring/renderprops';
+import LocalizedStrings from 'react-localization';
+
+const localization = new LocalizedStrings({
+   en: {
+      HeroTitle: 'Add Bengali Fonts to your Website',
+      HeroSubTitle: 'It\'s Free and Easy',
+      CalltoActionButton: 'Browse Fonts',
+      SecondaryButton: 'Learn More',
+   },
+   bn: {
+      HeroTitle: 'আপনার ওয়েবসাইটে বাংলা ফন্ট অ্যাড করুন',
+      HeroSubTitle: 'সহজে এবং বিনামূল্যে',
+      CalltoActionButton: 'ফন্ট দেখুন',
+      SecondaryButton: 'আরো জানুন',
+   }
+});
 
 class Home extends Component {
    render() {
+
+      localization.setLanguage('en');
+
       return (
           <div>
              <header className={"pt-4 " + styles.HeroBg}>
@@ -15,14 +34,16 @@ class Home extends Component {
                    {props => (
                        <div style={props} className="container">
                           <div className="d-flex flex-column align-items-center text-center">
-                             <h3 className={"text-light " + styles.heroTitle}>
-                                আপনার ওয়েবসাইটে বাংলা ফন্ট অ্যাড করুন
-                                <br/>
-                                সহজে এবং বিনামূল্যে
-                             </h3>
+                             <h1 className={"text-light " + styles.heroTitle}>
+                                {localization.HeroTitle}
+                             </h1>
+                             <h2 className={"text-light " + styles.heroSubTitle}>
+                                {localization.HeroSubTitle}
+                             </h2>
                              <div className={"d-flex flex-column flex-lg-row " + styles.coaButtons}>
-                                <button className={"cbtn cbtn-orange " + styles.cbtn}>ফন্টগুলো দেখুন</button>
-                                <button className="cbtn cbtn-outline-orange">আরো জানুন</button>
+                                <button
+                                    className={"cbtn cbtn-orange " + styles.cbtn}>{localization.CalltoActionButton}</button>
+                                <button className="cbtn cbtn-outline-orange">{localization.SecondaryButton}</button>
                              </div>
                           </div>
                        </div>

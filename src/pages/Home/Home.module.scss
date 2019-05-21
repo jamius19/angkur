@@ -8,8 +8,9 @@
 }
 
 .heroTitle {
+  font-size: 2.3rem;
   margin-top: 110px;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .coaButtons {
@@ -20,10 +21,19 @@
   margin-bottom: 15px;
 }
 
+.heroSubTitle {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
 
 @media only screen and (min-width: $md) and (max-width: $lg) {
   .heroTitle {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
+  }
+
+  .heroSubTitle {
+    font-size: 1.8rem;
   }
 }
 
@@ -36,6 +46,10 @@
 
   .heroTitle {
     font-size: 3rem;
+  }
+
+  .heroSubTitle {
+    font-size: 2.4rem;
   }
 }
 
