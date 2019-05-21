@@ -9,8 +9,8 @@ class Home extends Component {
           <div>
              <header className={"pt-4 " + styles.HeroBg}>
                 <Navbar/>
-                <Spring from={{opacity: 0, transform: 'translate3d(0px, +20px, 0px)'}}
-                        to={{opacity: 1, transform: 'translate3d(0px, 0px, 0px)'}}
+                <Spring from={{transform: 'translate3d(0px, -20px, 0px)'}}
+                        to={{transform: 'translate3d(0px, 0px, 0px)'}}
                         config={config.gentle}>
                    {props => (
                        <div style={props} className="container">
