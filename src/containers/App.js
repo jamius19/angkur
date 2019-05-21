@@ -1,38 +1,21 @@
 import React from 'react';
 import Home from "../pages/Home/Home";
 import Language from '../context/Language';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {getCookie} from "../utility/UtilityFunc";
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import {getCookie, setCookie} from "../utility/UtilityFunc";
 
 function App() {
-
-
    return (
        <Router>
           <div>
              <Switch>
-                <Route exact path="/" component={
+                <Route path="/en/:q*/" component={
                    props => {
+                      //document.cookie = `lang=${'en'}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
+                      console.log('en detected');
+                      //console.log(props);
 
-                      if (!getCookie('lang')) {
-                         document.cookie = "lang=bn; expires=Thu, 18 Dec 2020 12:00:00 UTC";
-                      }
-
-                      props.history.push('/' + getCookie('lang'));
-
-                      return (
-                          <Language.Provider value={getCookie('lang')}>
-                             <Home/>
-                          </Language.Provider>
-                      );
-                   }
-                }/>
-
-                <Route strict path="/en" component={
-                   props => {
-                      document.cookie = `lang=${'en'}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
-
-                      console.log(getCookie('lang'));
+                      setCookie('lang', 'en');
 
                       return (
                           <Language.Provider value={'en'}>
@@ -42,12 +25,14 @@ function App() {
                    }
                 }/>
 
-                <Route strict path="/bn" component={
+                <Route path="/bn/:q*/" component={
                    props => {
+                      console.log('bn detected');
+                      //document.cookie = `lang=${'bn'}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
+                      //console.log(props);
 
-                      document.cookie = `lang=${'bn'}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
+                      setCookie('lang', 'bn');
 
-                      console.log(getCookie('lang'));
 
                       return (
                           <Language.Provider value={'bn'}>
@@ -56,11 +41,23 @@ function App() {
                       );
                    }
                 }/>
+
+                <Route path="/:q(.*)" component={
+                   props => {
+                      console.log('nothing detected');
+                      //console.log(props);
+                      let lang = getCookie('lang') ? getCookie('lang') : 'bn';
+
+                      //return <h1>{lang}</h1>;
+                      return <Redirect to={`/${lang}${props.location.pathname}`}/>;
+                   }
+                }/>
              </Switch>
           </div>
        </Router>
    );
 }
+
 
 //document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
 

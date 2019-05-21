@@ -35,7 +35,7 @@ class Navbar extends Component {
              <ul className={"d-flex text-light list-unstyled " + styles.localizationBar}>
                 <i className="fas fa-language"/>
                 <li className="nav-links">
-                   <a className="text-light" href="\en">EN</a>
+                   <a className="text-light" href="\en">ENG</a>
                 </li>
                 <li className="nav-links">
                    <a className="text-muted" href="\bn">বাংলা</a>
