@@ -13,7 +13,7 @@ class Home extends Component {
                         to={{transform: 'translate3d(0px, 0px, 0px)'}}
                         config={config.gentle}>
                    {props => (
-                       <div className="container">
+                       <div style={props} className="container">
                           <div className="d-flex flex-column align-items-center text-center">
                              <h3 className={"text-light " + styles.heroTitle}>
                                 আপনার ওয়েবসাইটে বাংলা ফন্ট অ্যাড করুন

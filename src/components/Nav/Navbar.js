@@ -12,7 +12,7 @@ class Navbar extends Component {
                      to={{transform: 'translate3d(0px, 0px, 0px)'}}
                      config={config.gentle}>
                 {props => (
-                    <nav className={"navbar navbar-expand navbar-dark bg-transparent"}>
+                    <nav style={props} className={"navbar navbar-expand navbar-dark bg-transparent"}>
                        <div className={classes.container}>
                           <a className="navbar-brand" href="#">
                              <img className={classes.navlogo} src={logo}/>
