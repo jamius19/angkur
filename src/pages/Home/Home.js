@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import Navbar from "../../components/Nav/Navbar";
 import styles from './Home.module.scss';
-import {Spring, config} from 'react-spring/renderprops';
+import {Transition, Spring, config} from 'react-spring/renderprops';
 import LocalizedStrings from 'react-localization';
 import Language from '../../context/Language';
 
 
 const localization = new LocalizedStrings({
    en: {
-      HeroTitle: 'Add Bengali Fonts to your Website',
+      HeroTitle: 'Add Bangla Fonts to your Website',
       HeroSubTitle: 'It\'s Free and Easy',
       CalltoActionButton: 'Browse Fonts',
       SecondaryButton: 'Learn More',
@@ -25,8 +25,8 @@ class Home extends Component {
 
    static contextType = Language;
 
-
    render() {
+
 
       localization.setLanguage(this.context);
 
@@ -60,11 +60,5 @@ class Home extends Component {
       );
    }
 }
-
-/*<Spring from={{opacity: 0, transform: 'translate3d(0px, -20px, 0px)'}}
-                        to={{opacity: 1, transform: 'translate3d(0px, 0px, 0px)'}}
-                        config={config.gentle}>
-                   {props => ()}
-                </Spring>*/
 
 export default Home;

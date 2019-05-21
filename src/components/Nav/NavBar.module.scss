@@ -47,9 +47,9 @@
     display: inline-block;
     font-size: 1.4rem;
     color: white;
-    border: 1px solid white;
-    padding: 5px;
-    border-radius: 3px;
+    border: 2px solid white;
+    padding: 7px;
+    border-radius: 5px;
   }
 
   ul {
@@ -57,102 +57,106 @@
   }
 }
 
-@media only screen and (min-width: $md) and (max-width: $lg) {
-  .navlogo {
-    width: 200px;
-  }
 
-  .localizationBar {
-    top: -10px;
-    right: 5vw;
-    display: flex !important;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-  .navList {
-    font-size: 1.5rem;
-    margin-top: 2px;
-
-    i {
-      display: none;
+@media only screen {
+  @media (min-width: $md) and (max-width: $lg) {
+    .navlogo {
+      width: 200px;
     }
 
-    ul {
-      display: flex;
+    .localizationBar {
+      top: -10px;
+      right: 5vw;
+      display: flex !important;
+    }
 
-      li:not(:last-of-type) {
-        margin-right: 8px;
+    .container {
+      width: 95%;
+    }
+
+    .navList {
+      font-size: 1.3rem;
+      margin-top: 2px;
+
+      i {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+
+        li:not(:last-of-type) {
+          margin-right: 3px;
+        }
       }
     }
   }
-}
 
-@media only screen and (min-width: $lg) and (max-width: $xl) {
-  .navlogo {
-    width: 250px;
-  }
 
-  .container {
-    width: 80vw;
-  }
-
-  .localizationBar {
-    top: -10px;
-    right: 10.5vw;
-    display: flex !important;
-  }
-
-  .navList {
-    font-size: 1.55rem;
-    margin-top: 2px;
-
-    i {
-      display: none;
+  @media (min-width: $lg) and (max-width: $xl) {
+    .navlogo {
+      width: 250px;
     }
 
-    ul {
-      display: flex;
+    .container {
+      width: 80vw;
+    }
 
-      li:not(:last-of-type) {
-        margin-right: 8px;
+    .localizationBar {
+      top: -10px;
+      right: 10.5vw;
+      display: flex !important;
+    }
+
+    .navList {
+      font-size: 1.5rem;
+      margin-top: 2px;
+
+      i {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+
+        li:not(:last-of-type) {
+          margin-right: 3px;
+        }
       }
     }
   }
-}
 
-@media only screen and (min-width: $xl) {
-  .navlogo {
-    width: 300px;
-  }
-
-  .container {
-    width: 75vw;
-  }
-
-  .localizationBar {
-    top: 0;
-    right: 13vw;
-    display: flex !important;
-
-
-  }
-
-  .navList {
-    font-size: 1.8rem;
-    margin-top: 2px;
-
-    i {
-      display: none;
+  @media (min-width: $xl) {
+    .navlogo {
+      width: 300px;
     }
 
-    ul {
-      display: flex;
+    .container {
+      width: 75vw;
+    }
 
-      li:not(:last-of-type) {
-        margin-right: 20px;
+    .localizationBar {
+      top: 0;
+      right: 13vw;
+      display: flex !important;
+
+
+    }
+
+    .navList {
+      font-size: 1.65rem;
+      margin-top: 2px;
+
+      i {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+
+        li:not(:last-of-type) {
+          margin-right: 7px;
+        }
       }
     }
   }
