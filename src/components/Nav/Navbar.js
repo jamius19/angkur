@@ -2,10 +2,34 @@ import React, {Component} from 'react';
 import classes from './NavBar.module.scss';
 import logo from '../../assets/logo.svg';
 import {Spring, config} from 'react-spring/renderprops';
+import LocalizedStrings from "react-localization";
+import Language from "../../context/Language";
+import {NavLink} from 'react-router-dom';
 
+
+const localization = new LocalizedStrings({
+   en: {
+      first: 'Home',
+      second: 'Font Collection',
+      third: 'About Us',
+   },
+   bn: {
+      first: 'হোম',
+      second: 'ফন্ট কালেকশান',
+      third: 'আমাদের সম্পর্কে',
+   }
+});
 
 class Navbar extends Component {
+
+   static contextType = Language;
+
+
    render() {
+
+      localization.setLanguage(this.context);
+
+
       return (
           <div>
              <Spring from={{transform: 'translate3d(0px, -20px, 0px)'}}
@@ -22,14 +46,14 @@ class Navbar extends Component {
                              <i className="fas fa-bars"/>
 
                              <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active">
-                                   <a className="nav-link" href="#">হোম</a>
+                                <li className="nav-item">
+                                   <NavLink className="nav-link" to="/">{localization.first}</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                   <a className="nav-link" href="#">ফন্ট কালেকশান</a>
+                                   <NavLink className="nav-link" to="/about">{localization.second}</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                   <a className="nav-link" href="#">আমাদের সম্পর্কে</a>
+                                   <NavLink className="nav-link" to="/about">{localization.third}</NavLink>
                                 </li>
                              </ul>
                           </div>

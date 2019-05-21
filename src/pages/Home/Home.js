@@ -3,6 +3,8 @@ import Navbar from "../../components/Nav/Navbar";
 import styles from './Home.module.scss';
 import {Spring, config} from 'react-spring/renderprops';
 import LocalizedStrings from 'react-localization';
+import Language from '../../context/Language';
+
 
 const localization = new LocalizedStrings({
    en: {
@@ -20,9 +22,13 @@ const localization = new LocalizedStrings({
 });
 
 class Home extends Component {
+
+   static contextType = Language;
+
+
    render() {
 
-      localization.setLanguage('en');
+      localization.setLanguage(this.context);
 
       return (
           <div>
