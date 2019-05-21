@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import classes from './NavBar.module.scss';
+import styles from './NavBar.module.scss';
 import logo from '../../assets/logo.svg';
 import {Spring, config} from 'react-spring/renderprops';
 import LocalizedStrings from "react-localization";
@@ -31,29 +31,39 @@ class Navbar extends Component {
 
 
       return (
-          <div>
+          <div className="position-relative">
+             <ul className={"d-flex text-light list-unstyled " + styles.localizationBar}>
+                <i className="fas fa-language"/>
+                <li className="nav-links">
+                   <a className="text-light" href="\en">EN</a>
+                </li>
+                <li className="nav-links">
+                   <a className="text-muted" href="\bn">বাংলা</a>
+                </li>
+             </ul>
+
              <Spring from={{transform: 'translate3d(0px, -20px, 0px)'}}
                      to={{transform: 'translate3d(0px, 0px, 0px)'}}
                      config={config.gentle}>
                 {props => (
                     <nav style={props} className={"navbar navbar-expand navbar-dark bg-transparent"}>
-                       <div className={classes.container}>
+                       <div className={styles.container}>
                           <a className="navbar-brand" href="#">
-                             <img className={classes.navlogo} src={logo}/>
+                             <img className={styles.navlogo} src={logo}/>
                           </a>
 
-                          <div className={"ml-auto " + classes.navList}>
+                          <div className={"ml-auto " + styles.navList}>
                              <i className="fas fa-bars"/>
 
                              <ul className="navbar-nav ml-auto">
-                                <li className="nav-item">
-                                   <NavLink className="nav-link" to="/">{localization.first}</NavLink>
+                                <li className="nav-item active">
+                                   <a className="nav-link" href="/">{localization.first}</a>
                                 </li>
                                 <li className="nav-item">
-                                   <NavLink className="nav-link" to="/about">{localization.second}</NavLink>
+                                   <a className="nav-link" href="/about">{localization.second}</a>
                                 </li>
                                 <li className="nav-item">
-                                   <NavLink className="nav-link" to="/about">{localization.third}</NavLink>
+                                   <a className="nav-link" href="/about">{localization.third}</a>
                                 </li>
                              </ul>
                           </div>

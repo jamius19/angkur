@@ -13,12 +13,12 @@ function App() {
              <Switch>
                 <Route exact path="/" component={
                    props => {
-                      console.log(getCookie('lang'));
-
 
                       if (!getCookie('lang')) {
                          document.cookie = "lang=bn; expires=Thu, 18 Dec 2020 12:00:00 UTC";
                       }
+
+                      props.history.push('/' + getCookie('lang'));
 
                       return (
                           <Language.Provider value={getCookie('lang')}>
@@ -28,13 +28,29 @@ function App() {
                    }
                 }/>
 
-                <Route exact path="/:id" component={
+                <Route strict path="/en" component={
                    props => {
-                      document.cookie = `lang=${props.match.params.id}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
+                      document.cookie = `lang=${'en'}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
+
                       console.log(getCookie('lang'));
 
                       return (
-                          <Language.Provider value={props.match.params.id}>
+                          <Language.Provider value={'en'}>
+                             <Home/>
+                          </Language.Provider>
+                      );
+                   }
+                }/>
+
+                <Route strict path="/bn" component={
+                   props => {
+
+                      document.cookie = `lang=${'bn'}; expires=Thu, 18 Dec 2020 12:00:00 UTC`;
+
+                      console.log(getCookie('lang'));
+
+                      return (
+                          <Language.Provider value={'bn'}>
                              <Home/>
                           </Language.Provider>
                       );
