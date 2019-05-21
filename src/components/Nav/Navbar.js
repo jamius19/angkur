@@ -8,7 +8,7 @@ class Navbar extends Component {
    render() {
       return (
           <div>
-             <Spring from={{transform: 'translate3d(0px, +20px, 0px)'}}
+             <Spring from={{transform: 'translate3d(0px, -20px, 0px)'}}
                      to={{transform: 'translate3d(0px, 0px, 0px)'}}
                      config={config.gentle}>
                 {props => (
