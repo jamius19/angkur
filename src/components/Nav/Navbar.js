@@ -8,8 +8,8 @@ class Navbar extends Component {
    render() {
       return (
           <div>
-             <Spring from={{transform: 'translate3d(0px, +20px, 0px)'}}
-                     to={{transform: 'translate3d(0px, 0px, 0px)'}}
+             <Spring from={{opacity: 0, transform: 'translate3d(0px, +20px, 0px)'}}
+                     to={{opacity: 1, transform: 'translate3d(0px, 0px, 0px)'}}
                      config={config.gentle}>
                 {props => (
                     <nav style={props} className={"navbar navbar-expand navbar-dark bg-transparent"}>
