@@ -7,17 +7,6 @@ import {withRouter} from "react-router-dom";
 
 class ResponsiveNav extends Component {
 
-   /*state = {
-      showNav: false,
-   };
-
-   toggleNavMobile = () => {
-      this.setState({
-         showNav: false,
-      });
-   };*/
-
-
    render() {
       let localization = this.props.localization;
 
@@ -31,8 +20,10 @@ class ResponsiveNav extends Component {
               from={{opacity: 0, transform: 'translate3d(0px, -80px, 0px)'}}
               enter={{opacity: 1, transform: 'translate3d(0px, 0px, 0px)'}}
               leave={{opacity: 0, transform: 'translate3d(0px, +80px, 0px)'}}
-              config={config.gentle}>
+              config={config.wobbly}>
              {item => item && (props => (
+
+
                  <div style={props} className={styles.responsiveNavContainer}>
                     <div className={styles.responsiveNav}>
                        <a href={langForNavIsEN ? "/en" : "/bn"}>
@@ -78,6 +69,8 @@ class ResponsiveNav extends Component {
                        </nav>
                     </div>
                  </div>
+
+
              ))}
           </Transition>
       );

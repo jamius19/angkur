@@ -12,13 +12,13 @@ import Backdrop from "../UI/Backdrop/Backdrop";
 const localization = new LocalizedStrings({
    bn: {
       first: 'হোম',
-      second: 'ফন্ট',
+      second: 'ফন্টলিস্ট',
       third: 'ডকুমেন্টেশন',
       fourth: 'আমাদের সম্পর্কে',
    }
    , en: {
       first: 'Home',
-      second: 'Fonts',
+      second: 'Fonts List',
       third: 'Docs',
       fourth: 'About Us',
    },
@@ -89,7 +89,12 @@ class Navbar extends Component {
                 {props => (
                     <nav style={props} className={"navbar navbar-expand navbar-dark bg-transparent"}>
                        <div className={styles.container}>
-                          <a className="navbar-brand" href={langForNavIsEN ? "/en" : "/bn"}>
+                          <a className="navbar-brand"
+                             onClick={(e) => {
+                                e.preventDefault();
+                                this.props.history.push(`${langForNavIsEN ? "/en" : "/bn"}`);
+                             }}
+                             href={langForNavIsEN ? "/en" : "/bn"}>
                              <img className={styles.navlogo} src={logo}/>
                           </a>
 

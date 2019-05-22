@@ -24,7 +24,7 @@
     position: relative;
     top: -1px;
     margin-right: 10px;
-    color: #ffbe00;
+    color: $primaryColor;
   }
 
   li:first-of-type {
@@ -47,7 +47,7 @@
     display: inline-block;
     font-size: 1.8rem;
     color: white;
-    margin-top: 5px;
+    margin-top: 12px;
     /*border: 2px solid white;
     padding: 7px;*/
     border-radius: 5px;

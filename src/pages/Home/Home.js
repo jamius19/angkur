@@ -10,7 +10,7 @@ const localization = new LocalizedStrings({
    bn: {
       HeroTitle: 'আপনার ওয়েবসাইটে বাংলা ওয়েব ফন্ট অ্যাড করুন',
       HeroSubTitle: 'সহজে এবং বিনামূল্যে',
-      CalltoActionButton: 'ফন্ট দেখুন',
+      CalltoActionButton: 'ফন্টগুলো দেখুন',
       SecondaryButton: 'আরো জানুন',
    },
    en: {
@@ -34,7 +34,11 @@ class Home extends Component {
       return (
           <div>
              <header className={"pt-4 " + styles.HeroBg}>
+
+
                 <Navbar/>
+
+
                 <Spring from={{transform: 'translate3d(0px, +20px, 0px)'}}
                         to={{transform: 'translate3d(0px, 0px, 0px)'}}
                         config={config.gentle}>

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import {getCookie, setCookie} from "../utility/UtilityFunc";
-import BnRouter from "../utility/Language Router/BN Router/BNRouter";
-import ENRouter from "../utility/Language Router/EN Router/ENRouter";
 import Language from "../context/Language";
 import LocalizedStrings from 'react-localization';
+import Home from "../pages/Home/Home";
 
 
 const lang = new LocalizedStrings({
@@ -43,34 +42,28 @@ class App extends Component {
           <Router>
              <div>
                 <Switch>
-                   <Route path="/en/:q*/" component={
+                   {/*  For Routes with EN or BN   */}
+                   <Route path="/:lang(en|bn)/:q*/" component={
                       props => {
-                         lang.setLanguage('en');
+
+                         let langID = props.match.params['lang'];
+                         lang.setLanguage(props.match.params['lang']);
                          document.title = lang.title;
 
-                         setCookie('lang', 'en');
+                         setCookie('lang', props.match.params['lang']);
                          return (
-                             <Language.Provider value={{lang: 'en', changeLang: this.changeLang}}>
-                                <ENRouter/>
+                             <Language.Provider value={{lang: props.match.params['lang'], changeLang: this.changeLang}}>
+                                <Switch>
+                                   <Route exact path={[`/${langID}`, `/${langID}/`]} component={props => <Home/>}/>
+                                   <Route exact path={[`/${langID}/about`, `/${langID}/about/`]}
+                                          component={props => <Test/>}/>
+                                </Switch>
                              </Language.Provider>
                          );
                       }
                    }/>
 
-                   <Route path="/bn/:q*/" component={
-                      props => {
-                         lang.setLanguage('bn');
-                         document.title = lang.title;
-
-                         setCookie('lang', 'bn');
-                         return (
-                             <Language.Provider value={{lang: 'bn', changeLang: this.changeLang}}>
-                                <BnRouter/>
-                             </Language.Provider>
-                         );
-                      }
-                   }/>
-
+                   {/*  For Routes without EN or BN, redirect them to EN/BN   */}
                    <Route path="/:q(.*)" component={
                       props => {
                          console.log('nothing detected');
@@ -84,5 +77,9 @@ class App extends Component {
       );
    }
 }
+
+const Test = (props) => {
+   return <h1>Test</h1>
+};
 
 export default App;
