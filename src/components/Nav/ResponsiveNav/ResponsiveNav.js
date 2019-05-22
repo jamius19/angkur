@@ -65,10 +65,12 @@ class ResponsiveNav extends Component {
                              <i className="fas fa-language"/>
                              <li className="nav-links">
                                 <a className={langForNavIsEN ? 'text-light' : 'text-muted'}
+                                   onClick={(e) => this.props.setLang(e, 'en')}
                                    href={"\\en\\" + paramsToAppendLangChange}>ENG</a>
                              </li>
                              <li className="nav-links">
                                 <a className={langForNavIsEN ? 'text-muted' : 'text-light'}
+                                   onClick={(e) => this.props.setLang(e, 'bn')}
                                    href={"\\bn\\" + paramsToAppendLangChange}>বাংলা</a>
                              </li>
                           </ul>

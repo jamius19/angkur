@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Switch, Route, withRouter} from "react-router-dom";
-import Language from '../../../context/Language';
 import Home from "../../../pages/Home/Home";
 
 class EnRouter extends Component {

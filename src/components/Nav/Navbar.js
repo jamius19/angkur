@@ -10,18 +10,19 @@ import Backdrop from "../UI/Backdrop/Backdrop";
 
 
 const localization = new LocalizedStrings({
-   en: {
-      first: 'Home',
-      second: 'Fonts',
-      third: 'Docs',
-      fourth: 'About Us',
-   },
    bn: {
       first: 'হোম',
       second: 'ফন্ট',
       third: 'ডকুমেন্টেশন',
       fourth: 'আমাদের সম্পর্কে',
    }
+   , en: {
+      first: 'Home',
+      second: 'Fonts',
+      third: 'Docs',
+      fourth: 'About Us',
+   },
+
 });
 
 class Navbar extends Component {
@@ -38,9 +39,22 @@ class Navbar extends Component {
       })
    };
 
-   render() {
+   setLang = (e, lang) => {
+      e.preventDefault();
+      console.log(`[Navbar.js] Changing Language to ${lang}`);
 
-      localization.setLanguage(this.context);
+
+      let paramsToAppendLangChange = (this.props.match.params.q !== undefined ? this.props.match.params.q : "");
+      this.props.history.push(`/${lang}/${paramsToAppendLangChange}`);
+
+      this.context.changeLang(lang);
+   };
+
+   render() {
+      console.log(`[Navbar.js] Show Responsive Menu ${this.state.showNav}`);
+
+
+      localization.setLanguage(this.context.lang);
       let langForNavIsEN = this.props.match.path.substr(1, 2) === 'en';
       let paramsToAppendLangChange = (this.props.match.params.q !== undefined ? this.props.match.params.q : "");
 
@@ -55,10 +69,12 @@ class Navbar extends Component {
                        <i className="fas fa-language"/>
                        <li className="nav-links">
                           <a className={langForNavIsEN ? 'text-light' : 'text-muted'}
+                             onClick={(e) => this.setLang(e, 'en')}
                              href={"\\en\\" + paramsToAppendLangChange}>ENG</a>
                        </li>
                        <li className="nav-links">
                           <a className={langForNavIsEN ? 'text-muted' : 'text-light'}
+                             onClick={(e) => this.setLang(e, 'bn')}
                              href={"\\bn\\" + paramsToAppendLangChange}>বাংলা</a>
                        </li>
                     </ul>
@@ -91,7 +107,10 @@ class Navbar extends Component {
                                    <a className="nav-link" href="/about">{localization.third}</a>
                                 </li>
                                 <li className="nav-item">
-                                   <a className="nav-link" href="/about">{localization.fourth}</a>
+                                   <a className="nav-link"
+                                      href="/about">
+                                      {localization.fourth}
+                                   </a>
                                 </li>
                              </ul>
                           </div>
@@ -103,7 +122,8 @@ class Navbar extends Component {
              {/*Responsive Nav*/}
              <Backdrop click={this.toggleNavMobile} show={this.state.showNav}/>
              <ResponsiveNav toggleNavMobile={this.toggleNavMobile} show={this.state.showNav}
-                            localization={localization}/>
+                            localization={localization}
+                            setLang={this.setLang}/>
           </div>
       );
    }

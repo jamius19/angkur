@@ -4,9 +4,38 @@ import {getCookie, setCookie} from "../utility/UtilityFunc";
 import BnRouter from "../utility/Language Router/BN Router/BNRouter";
 import ENRouter from "../utility/Language Router/EN Router/ENRouter";
 import Language from "../context/Language";
+import LocalizedStrings from 'react-localization';
+
+
+const lang = new LocalizedStrings({
+   bn: {
+      title: 'অংকুর | বাংলা ওয়েব ফন্ট'
+   }, en: {
+      title: 'Angkur | Bangla Web Font'
+   },
+
+});
 
 
 class App extends Component {
+
+
+   constructor(props) {
+      super(props);
+      let lang = getCookie('lang') ? getCookie('lang') : 'bn';
+      this.state = {
+         lang: lang
+      }
+   }
+
+
+   changeLang = (lang) => {
+      console.log(`[App.js] Current Language is ${this.state.lang}`);
+
+      this.setState({
+         lang: lang
+      });
+   };
 
 
    render() {
@@ -16,9 +45,12 @@ class App extends Component {
                 <Switch>
                    <Route path="/en/:q*/" component={
                       props => {
+                         lang.setLanguage('en');
+                         document.title = lang.title;
+
                          setCookie('lang', 'en');
                          return (
-                             <Language.Provider value={'en'}>
+                             <Language.Provider value={{lang: 'en', changeLang: this.changeLang}}>
                                 <ENRouter/>
                              </Language.Provider>
                          );
@@ -27,9 +59,12 @@ class App extends Component {
 
                    <Route path="/bn/:q*/" component={
                       props => {
+                         lang.setLanguage('bn');
+                         document.title = lang.title;
+
                          setCookie('lang', 'bn');
                          return (
-                             <Language.Provider value={'bn'}>
+                             <Language.Provider value={{lang: 'bn', changeLang: this.changeLang}}>
                                 <BnRouter/>
                              </Language.Provider>
                          );
