@@ -8,9 +8,9 @@ import Home from "../pages/Home/Home";
 
 const lang = new LocalizedStrings({
    bn: {
-      title: 'অংকুর | বাংলা ওয়েব ফন্ট'
+      title: 'অংকুর - বাংলা ওয়েব ফন্ট'
    }, en: {
-      title: 'Angkur | Bangla Web Font'
+      title: 'Angkur - Bangla Web Font'
    },
 
 });
