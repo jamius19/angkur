@@ -7,7 +7,6 @@
     url('hinted-subset-SolaimanLipi-Bold.woff') format('woff'),
     url('hinted-subset-SolaimanLipi-Bold.ttf') format('truetype');
     font-weight: bold;
-    unicode-range: U+0981-09CD;
     font-style: normal;
 }
 
@@ -21,6 +20,5 @@
     url('hinted-subset-SolaimanLipiNormal.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    unicode-range: U+0981-09CD;
 }
 
