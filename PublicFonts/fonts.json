@@ -1,10 +1,14 @@
 {
-  "SolaimanLipi": {
-    "author": "Solaiman Karim",
-    "type": "Serif",
-    "styles": [
-      "Normal",
-      "Bold"
-    ]
-  }
+  "fonts": [
+    {
+      "id": 1,
+      "name": "SolaimanLipi",
+      "author": "Solaiman Karim",
+      "type": "Serif",
+      "styles": [
+        "Normal",
+        "Bold"
+      ]
+    }
+  ]
 }
