@@ -4,7 +4,7 @@
       "id": 1,
       "name": "SolaimanLipi",
       "author": "Solaiman Karim",
-      "type": "Serif",
+      "type": "0",
       "styles": [
         "Normal",
         "Bold"
@@ -18,7 +18,7 @@
       "id": 2,
       "name": "Ekushey Mukto",
       "author": "Ekushey.Org",
-      "type": "Sans Serif",
+      "type": "1",
       "styles": [
         "Normal",
         "Bold"
@@ -32,7 +32,7 @@
       "id": 3,
       "name": "Ben Sen Handwriting",
       "author": "Subrata Sen",
-      "type": "Sans Serif",
+      "type": "1",
       "styles": [
         "Normal"
       ],
