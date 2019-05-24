@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Ekushey Mukto';
+    src: url('hinted-subset-EkusheyMukto-Bold.eot');
+    src: local('Ekushey Mukto Bold'), local('EkusheyMukto-Bold'),
+    url('hinted-subset-EkusheyMukto-Bold.eot?#iefix') format('embedded-opentype'),
+    url('hinted-subset-EkusheyMukto-Bold.woff2') format('woff2'),
+    url('hinted-subset-EkusheyMukto-Bold.woff') format('woff'),
+    url('hinted-subset-EkusheyMukto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ekushey Mukto';
+    src: url('hinted-subset-EkusheyMukto.eot');
+    src: local('Ekushey Mukto'), local('EkusheyMukto'),
+    url('hinted-subset-EkusheyMukto.eot?#iefix') format('embedded-opentype'),
+    url('hinted-subset-EkusheyMukto.woff2') format('woff2'),
+    url('hinted-subset-EkusheyMukto.woff') format('woff'),
+    url('hinted-subset-EkusheyMukto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

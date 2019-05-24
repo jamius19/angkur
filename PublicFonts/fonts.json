@@ -8,6 +8,24 @@
       "styles": [
         "Normal",
         "Bold"
+      ],
+      "file": [
+        "hinted-subset-SolaimanLipiNormal.ttf",
+        "hinted-subset-SolaimanLipi-Bold.ttf"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Ekushey Mukto",
+      "author": "Ekushey.Org",
+      "type": "Sans Serif",
+      "styles": [
+        "Normal",
+        "Bold"
+      ],
+      "file": [
+        "hinted-subset-EkusheyMukto.ttf",
+        "hinted-subset-EkusheyMukto-Bold.ttf"
       ]
     }
   ]
