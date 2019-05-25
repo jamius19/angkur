@@ -3,6 +3,8 @@ import styles from './FontPage.module.scss';
 import Navbar from "../../components/Nav/Navbar";
 import LocalizedStrings from 'react-localization';
 import {numToBangla} from "../../utility/UtilityFunc";
+import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
+import {atomDark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const localization = new LocalizedStrings({
    bn: {
@@ -14,11 +16,15 @@ const localization = new LocalizedStrings({
 });
 
 class FontPage extends Component {
+
    render() {
+      const codeString = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jamius19/angkur@latest/PublicFonts/SolaimanLipi/stylesheet.css"/>';
+      const cssString = "* {\n\tfont-family: 'SolaimanLipi', sans-serif;\n}";
+
       return (
           <div>
              <Navbar showBG/>
-             <div className="container-c mt-5">
+             <div className={`container-c mb-5`}>
                 <div className="row">
                    <div className="col-sm">
                       <h1 className={styles.fontTitle}>SolaimanLipi</h1>
@@ -61,6 +67,22 @@ class FontPage extends Component {
 
                    </div>
                 </div>
+
+                <div className={styles.fontInstruction} id="getting-the-font">
+                   <h2 className="">Getting the Font</h2>
+                   <hr className={styles.divider}/>
+                   <p className="font-weight-bold">Insert the code inside your <code>{"<head>"}</code> element.</p>
+
+                   <p className="font-weight-bold">
+                      <SyntaxHighlighter language='html' style={atomDark}>{codeString}</SyntaxHighlighter>
+                   </p>
+
+                   <p className=" mt-4 font-weight-bold">Then change the default typeface in your CSS files.</p>
+                   <p className="font-weight-bold">
+                      <SyntaxHighlighter language='css' style={atomDark}>{cssString}</SyntaxHighlighter>
+                   </p>
+                </div>
+
              </div>
           </div>
       );
