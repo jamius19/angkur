@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'SolaimanLipi';
+    src: url('hinted-subset-SolaimanLipi-Bold.eot');
+    src: local('SolaimanLipi-Bold'),
+    url('hinted-subset-SolaimanLipi-Bold.eot?#iefix') format('embedded-opentype'),
+    url('hinted-subset-SolaimanLipi-Bold.woff2') format('woff2'),
+    url('hinted-subset-SolaimanLipi-Bold.woff') format('woff'),
+    url('hinted-subset-SolaimanLipi-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
