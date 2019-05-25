@@ -18,7 +18,7 @@ const localization = new LocalizedStrings({
 class FontPage extends Component {
 
    render() {
-      const codeString = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jamius19/angkur@latest/PublicFonts/SolaimanLipi/stylesheet.css"/>';
+      const codeString = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/SolaimanLipi/stylesheet.css"/>';
       const cssString = "* {\n\tfont-family: 'SolaimanLipi', sans-serif;\n}";
 
       return (

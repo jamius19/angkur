@@ -25,7 +25,7 @@ class FontList extends Component {
 
 
    componentDidMount() {
-      fetch("https://cdn.jsdelivr.net/gh/jamius19/angkur@latest/PublicFonts/fonts.json")
+      fetch("https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/fonts.json")
           .then(value => value.json())
           .then(value => {
              this.setState({
