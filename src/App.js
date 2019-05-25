@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
-import {getCookie, setCookie} from "../utility/UtilityFunc";
-import Language from "../context/Language";
+import {getCookie, setCookie} from "./utility/UtilityFunc";
+import Language from "./context/Language";
 import LocalizedStrings from 'react-localization';
-import Home from "../pages/Home/Home";
+import Home from "./pages/Home/Home";
+import Navbar from "./components/Nav/Navbar";
+import FontPage from "./pages/FontPage/FontPage";
 
 
 const lang = new LocalizedStrings({
@@ -56,7 +58,10 @@ class App extends Component {
                                 <Switch>
                                    <Route exact path={[`/${langID}`, `/${langID}/`]} component={props => <Home/>}/>
                                    <Route exact path={[`/${langID}/about`, `/${langID}/about/`]}
-                                          component={props => <Test/>}/>
+                                          component={props => <Navbar/>}/>
+
+                                   <Route exact path={[`/${langID}/font`, `/${langID}/font/`]}
+                                          component={props => <FontPage/>}/>
                                 </Switch>
                              </Language.Provider>
                          );

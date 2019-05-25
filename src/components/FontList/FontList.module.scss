@@ -1,0 +1,55 @@
+@import "../../assets/styles/Variables";
+
+
+.fontContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 40px;
+
+
+}
+
+
+@media only screen {
+  @media (min-width: $md) and (max-width: $lg) {
+
+    .fontContainer {
+      width: 96%;
+      margin-left: 1.5%;
+    }
+
+  }
+
+
+  @media (min-width: $lg) and (max-width: $xl) {
+
+    .fontContainer {
+      width: 96%;
+      margin-left: 1.2%;
+    }
+
+  }
+
+  @media (min-width: $xl) and (max-width: 1469px) {
+    .fontContainer {
+      width: 96%;
+      margin-left: 1.2%;
+    }
+
+  }
+
+  @media (min-width: 1469px) {
+    .fontContainer {
+      width: 96%;
+      margin-left: 1.2%;
+    }
+
+  }
+}
+
+
+

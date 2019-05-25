@@ -3,7 +3,7 @@ import styles from './ResponsiveNav.module.scss';
 import logo from '../../../assets/logo.svg';
 
 import {Spring, config, Transition} from "react-spring/renderprops";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 class ResponsiveNav extends Component {
 
@@ -12,7 +12,8 @@ class ResponsiveNav extends Component {
 
       localization.setLanguage(this.props.match.path.substr(1, 2));
       let langForNavIsEN = this.props.match.path.substr(1, 2) === 'en';
-      let paramsToAppendLangChange = (this.props.match.params.q !== undefined ? this.props.match.params.q : "");
+      let paramsToAppendLangChange = (this.props.match.path.substr(4, this.props.match.path.length) ?
+          this.props.match.path.substr(4, this.props.match.path.length) : "");
 
       return (
           <Transition
@@ -55,14 +56,14 @@ class ResponsiveNav extends Component {
                           <ul className={"d-flex text-light list-unstyled " + styles.localizationBarResponsive}>
                              <i className="fas fa-language"/>
                              <li className="nav-links">
-                                <a className={langForNavIsEN ? 'text-light' : 'text-muted'}
-                                   onClick={(e) => this.props.setLang(e, 'en')}
-                                   href={"\\en\\" + paramsToAppendLangChange}>ENG</a>
+                                <Link className={langForNavIsEN ? 'text-light' : 'text-muted'}
+                                    /*onClick={(e) => this.setLang(e, 'en')}*/
+                                      to={"/en/" + paramsToAppendLangChange}>ENG</Link>
                              </li>
                              <li className="nav-links">
-                                <a className={langForNavIsEN ? 'text-muted' : 'text-light'}
-                                   onClick={(e) => this.props.setLang(e, 'bn')}
-                                   href={"\\bn\\" + paramsToAppendLangChange}>বাংলা</a>
+                                <Link className={langForNavIsEN ? 'text-muted' : 'text-light'}
+                                    /*onClick={(e) => this.setLang(e, 'bn')}*/
+                                      to={"/bn/" + paramsToAppendLangChange}>বাংলা</Link>
                              </li>
                           </ul>
 

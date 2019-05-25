@@ -1,5 +1,17 @@
 @import "../../assets/styles/Variables";
 
+.navBarBG {
+  background: linear-gradient(to bottom, #292929, #222222);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height: 110px;
+  margin-bottom: 35px;
+}
+
+.navBar {
+  position: relative;
+  top: 20px;
+}
+
 .navlogo {
   width: 150px;
 }
@@ -61,12 +73,16 @@
 
 @media only screen {
   @media (min-width: $md) and (max-width: $lg) {
+    .navBarBG {
+      height: 120px;
+    }
+
     .navlogo {
       width: 200px;
     }
 
     .localizationBar {
-      top: -10px;
+      top: -3px;
       right: 5vw;
       display: flex !important;
     }
@@ -95,6 +111,10 @@
 
 
   @media (min-width: $lg) and (max-width: $xl) {
+    .navBarBG {
+      height: 140px;
+    }
+
     .navlogo {
       width: 250px;
     }
@@ -104,14 +124,14 @@
     }
 
     .localizationBar {
-      top: -10px;
+      top: 5px;
       right: 10.5vw;
       display: flex !important;
     }
 
     .navList {
       font-size: 1.5rem;
-      margin-top: 2px;
+      margin-top: 9px;
 
       i {
         display: none;
@@ -121,13 +141,17 @@
         display: flex;
 
         li:not(:last-of-type) {
-          margin-right: 3px;
+          margin-right: 10px;
         }
       }
     }
   }
 
   @media (min-width: $xl) {
+    .navBarBG {
+      height: 150px;
+    }
+
     .navlogo {
       width: 300px;
     }
@@ -137,16 +161,15 @@
     }
 
     .localizationBar {
-      top: 0;
-      right: 13vw;
+      top: 5px;
+      right: 12.7vw;
       display: flex !important;
-
 
     }
 
     .navList {
       font-size: 1.65rem;
-      margin-top: 2px;
+      margin-top: 6px;
 
       i {
         display: none;
@@ -156,7 +179,7 @@
         display: flex;
 
         li:not(:last-of-type) {
-          margin-right: 7px;
+          margin-right: 15px;
         }
       }
     }

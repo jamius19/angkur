@@ -4,6 +4,7 @@ import styles from './Home.module.scss';
 import {Spring, config} from 'react-spring/renderprops';
 import LocalizedStrings from 'react-localization';
 import Language from '../../context/Language';
+import FontList from '../../components/FontList/FontList';
 
 
 const localization = new LocalizedStrings({
@@ -33,11 +34,10 @@ class Home extends Component {
 
       return (
           <div>
-             <header className={"pt-4 " + styles.HeroBg}>
+             <header className={styles.HeroBg}>
 
 
                 <Navbar/>
-
 
                 <Spring from={{transform: 'translate3d(0px, +20px, 0px)'}}
                         to={{transform: 'translate3d(0px, 0px, 0px)'}}
@@ -64,6 +64,10 @@ class Home extends Component {
                    )}
                 </Spring>
              </header>
+
+             <FontList>
+
+             </FontList>
           </div>
       );
    }

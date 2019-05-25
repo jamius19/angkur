@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import './assets/styles/GlobalStyles.scss';
-import App from './containers/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 import "babel-polyfill";
 

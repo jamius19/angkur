@@ -45,3 +45,34 @@
 .cbtn-outline-orange:focus {
   outline: none;
 }
+
+
+// Container
+.container-c {
+  width: 88%;
+  margin: 0 auto;
+}
+
+
+@media only screen {
+  @media (min-width: $md) and (max-width: $lg) {
+    .container-c {
+      width: 90%;
+    }
+  }
+
+
+  @media (min-width: $lg) and (max-width: $xl) {
+    .container-c {
+      width: 79%;
+    }
+
+  }
+
+  @media (min-width: $xl) {
+    .container-c {
+      width: 75%;
+    }
+  }
+}
+

@@ -1,10 +1,11 @@
 @import "../../assets/styles/Variables";
 
 .HeroBg {
-  background-image: url("assets/bg_gradient-min.jpg");
+  background-image: url("assets/bg_gradient1.jpg");
   width: 100%;
-  background-position: bottom;
+  background-position: bottom right;
   background-size: cover;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
 }
 
 .heroTitle {
@@ -39,6 +40,13 @@
 
 
 @media only screen and (min-width: $lg) {
+
+
+  .HeroBg {
+    background-position: bottom;
+  }
+
+
   .cbtn:first-of-type {
     margin-bottom: 0px;
     margin-right: 20px;
