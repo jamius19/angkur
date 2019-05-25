@@ -1,0 +1,18 @@
+{
+  "fonts": [
+    {
+      "id": 1,
+      "name": "SolaimanLipi",
+      "author": "Solaiman Karim",
+      "type": "0",
+      "styles": [
+        "Normal",
+        "Bold"
+      ],
+      "file": [
+        "hinted-subset-SolaimanLipiNormal.ttf",
+        "hinted-subset-SolaimanLipi-Bold.ttf"
+      ]
+    }
+  ]
+}

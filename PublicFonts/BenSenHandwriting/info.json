@@ -1,0 +1,16 @@
+{
+  "fonts": [
+    {
+      "id": 3,
+      "name": "Ben Sen Handwriting",
+      "author": "Subrata Sen",
+      "type": "1",
+      "styles": [
+        "Normal"
+      ],
+      "file": [
+        "hinted-subset-BenSenHandwriting.ttf"
+      ]
+    }
+  ]
+}

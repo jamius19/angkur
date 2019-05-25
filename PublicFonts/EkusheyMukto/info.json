@@ -1,0 +1,18 @@
+{
+  "fonts": [
+    {
+      "id": 2,
+      "name": "Ekushey Mukto",
+      "author": "Ekushey.Org",
+      "type": "1",
+      "styles": [
+        "Normal",
+        "Bold"
+      ],
+      "file": [
+        "hinted-subset-EkusheyMukto.ttf",
+        "hinted-subset-EkusheyMukto-Bold.ttf"
+      ]
+    }
+  ]
+}
