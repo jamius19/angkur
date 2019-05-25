@@ -29,7 +29,7 @@ class Font extends Component {
       let isLangEn = this.context.lang === 'en';
       let styleDescription = isLangEn ? (this.props.styles.length <= 1 ? "Style" : "Styles") : localization.style;
 
-      let styleLink = `https://cdn.jsdelivr.net/gh/nokshaia/angkur@master/PublicFonts/${this.props.name.replace(/ /g, "")}/stylesheet.css`;
+      let styleLink = `https://cdn.jsdelivr.net/gh/nokshaia/angkur@master/PublicFonts/${this.props.name.replace(/ /g, "")}/stylesheet_Normal_DisplaySwap.css`;
       //console.log("[Font.js] " + this.props.text);
       return (
           <div className={styles.font}>
