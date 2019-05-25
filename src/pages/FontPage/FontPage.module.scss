@@ -4,48 +4,104 @@
   font-size: 2.5rem;
 }
 
+.fontCopyDiv {
+  position: relative;
+}
+
+.copyText {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.codeCopy {
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 2px 7px;
+  }
+}
+
+.icons {
+  /*position: absolute;
+  top: -15px;
+  left: -70px;
+  */
+  color: rgba(58, 58, 58, 0.33);
+  font-size: 2.5rem;
+  position: absolute;
+  left: -70px;
+}
+
 .divider {
   border: none;
-  width: 50%;
+  //width: 50%;
   height: 2px;
   background-color: rgba(0, 0, 0, 0.07);
 }
 
 .fontPreview {
-  margin-top: 90px;
+  position: relative;
+  margin-top: 80px;
   margin-bottom: 20px;
 
   p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0;
+  }
+}
+
+.fontPara {
+  position: relative;
+  margin-top: 70px;
+
+  textarea {
+    resize: none;
+    background-color: rgba(131, 131, 131, 0.05);
+    border: none;
+    height: 300px;
+    word-break: keep-all;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    display: inline-block;
+    //box-sizing: content-box;
+    padding: 20px;
+    border-radius: 10px;
+
+    //overflow-y: scroll;
+    //padding-right: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    //border: 1px solid black;
+  }
+
+  textarea:last-of-type {
+    margin-bottom: 35px;
+  }
+
+  textarea:focus {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+    outline: none;
+    transition: box-shadow 0.25s;
   }
 }
 
 
 .fontInstruction {
-  margin-top: 61px;
+  position: relative;
+  margin-top: 35px;
 }
 
 .fontDetails {
   position: relative;
   left: 0;
-  padding-top: 33px;
-
-  .styleDetails {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    h5 {
-      display: inline-block;
-      margin-left: 10px;
-    }
-
-    i {
-      font-size: 1.3rem;
-      display: inline-block;
-    }
-  }
+  margin-top: 15px;
 
   h5 {
     margin-top: -3px;
@@ -58,17 +114,27 @@
 @media only screen {
   @media (max-width: $sm) {
     .divider {
-      width: 70%;
+      //width: 70%;
+    }
+
+    .icons {
+      display: none;
     }
   }
 
   @media (min-width: $sm) and (max-width: $md) {
+
+    .icons {
+      display: none;
+    }
+
+
     .fontTitle {
       font-size: 2.7rem;
     }
 
     .divider {
-      width: 70%;
+      //width: 70%;
     }
   }
 
@@ -77,9 +143,17 @@
       font-size: 2.9rem;
     }
 
+    .fontPara {
+      textarea {
+        font-size: 1.6rem;
+        line-height: 2.7rem;
+      }
+    }
+
+
     .fontPreview {
       p {
-        font-size: 2rem;
+        font-size: 2.6rem;
       }
     }
   }
@@ -90,16 +164,31 @@
       font-size: 3.2rem;
     }
 
-    .fontPreview {
-      p {
-        font-size: 2.25rem;
+    .fontPara {
+      textarea {
+        font-size: 1.75rem;
+        line-height: 2.9rem;
       }
     }
+
+    .fontPreview {
+      p {
+        font-size: 2.6rem;
+      }
+    }
+
   }
 
   @media (min-width: $xl) {
     .fontTitle {
       font-size: 3.5rem;
+    }
+
+    .fontPara {
+      textarea {
+        font-size: 1.9rem;
+        line-height: 3rem;
+      }
     }
 
     .fontPreview {
