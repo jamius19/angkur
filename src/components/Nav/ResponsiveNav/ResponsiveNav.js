@@ -12,8 +12,8 @@ class ResponsiveNav extends Component {
 
       localization.setLanguage(this.props.match.path.substr(1, 2));
       let langForNavIsEN = this.props.match.path.substr(1, 2) === 'en';
-      let paramsToAppendLangChange = (this.props.match.path.substr(4, this.props.match.path.length) ?
-          this.props.match.path.substr(4, this.props.match.path.length) : "");
+      let paramsToAppendLangChange = (this.props.match.url.substr(4, this.props.match.url.length) ?
+          this.props.match.url.substr(4, this.props.match.url.length) : "");
 
       return (
           <Transition
@@ -39,7 +39,7 @@ class ResponsiveNav extends Component {
                              </li>
                              <li className="">
                                 <i className="fas fa-th-list fa-fw"/>
-                                <a className="text-light" href="/about">{localization.second}</a>
+                                <a className="text-light" href="/fonts">{localization.second}</a>
                              </li>
                              <li className="">
                                 <i className="fas fa-question-circle fa-fw"/>

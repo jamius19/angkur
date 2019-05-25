@@ -52,15 +52,15 @@ class Navbar extends Component {
    };
 
    render() {
-      console.log(`[Navbar.js] Show Responsive Menu ${this.state.showNav}`);
+      //console.log(`[Navbar.js] Show Responsive Menu ${this.state.showNav}`);
       let showBG = this.props.showBG ? this.props.showBG : false;
 
       localization.setLanguage(this.context.lang);
       let langForNavIsEN = this.context.lang === 'en';
-      let paramsToAppendLangChange = (this.props.match.path.substr(4, this.props.match.path.length) ?
-          this.props.match.path.substr(4, this.props.match.path.length) : "");
+      let paramsToAppendLangChange = (this.props.match.url.substr(4, this.props.match.url.length) ?
+          this.props.match.url.substr(4, this.props.match.url.length) : "");
 
-      console.log(paramsToAppendLangChange);
+      //console.log(paramsToAppendLangChange);
 
       return (
           <div className={showBG ? styles.navBarBG : ""}>
@@ -113,7 +113,7 @@ class Navbar extends Component {
                                    </li>
                                    <li className="nav-item">
                                       <Link className="nav-link"
-                                            to={`/${this.context.lang}/font`}>{localization.second}</Link>
+                                            to={`/${this.context.lang}/fonts`}>{localization.second}</Link>
                                    </li>
                                    <li className="nav-item">
                                       <Link className="nav-link" to="/en/about">{localization.third}</Link>

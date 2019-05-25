@@ -6,6 +6,7 @@ import LocalizedStrings from 'react-localization';
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Nav/Navbar";
 import FontPage from "./pages/FontPage/FontPage";
+import FontList from "./components/FontList/FontList";
 
 
 const lang = new LocalizedStrings({
@@ -40,6 +41,8 @@ class App extends Component {
 
 
    render() {
+      //<FontPage name="Ekushey Mukto" id={2}/>
+
       return (
           <Router>
              <div>
@@ -60,8 +63,16 @@ class App extends Component {
                                    <Route exact path={[`/${langID}/about`, `/${langID}/about/`]}
                                           component={props => <Navbar/>}/>
 
-                                   <Route exact path={[`/${langID}/font`, `/${langID}/font/`]}
-                                          component={props => <FontPage/>}/>
+                                   <Route exact path={[`/${langID}/fonts`, `/${langID}/fonts/`]}
+                                          component={props => {
+                                             return <FontList singlePage/>;
+                                          }}/>
+
+                                   <Route exact path={[`/${langID}/font/:name`, `/${langID}/font/:name/`]}
+                                          component={props => {
+                                             //console.log(props);
+                                             return <FontPage name={props.match.params['name'].replace(/_/g, " ")}/>;
+                                          }}/>
                                 </Switch>
                              </Language.Provider>
                          );

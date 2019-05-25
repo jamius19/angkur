@@ -5,6 +5,7 @@ import {Spring, config} from 'react-spring/renderprops';
 import LocalizedStrings from 'react-localization';
 import Language from '../../context/Language';
 import FontList from '../../components/FontList/FontList';
+import {Link} from "react-router-dom";
 
 
 const localization = new LocalizedStrings({
@@ -53,8 +54,10 @@ class Home extends Component {
                                 {localization.HeroSubTitle}
                              </h2>
                              <div className={"d-flex flex-column flex-lg-row " + styles.coaButtons}>
-                                <button
-                                    className={"cbtn cbtn-orange " + styles.cbtn}>{localization.CalltoActionButton}</button>
+                                <Link to={`/en/fonts`}>
+                                   <button
+                                       className={"cbtn cbtn-orange " + styles.cbtn}>{localization.CalltoActionButton}</button>
+                                </Link>
                                 <button className="cbtn cbtn-outline-orange">{localization.SecondaryButton}</button>
                              </div>
                           </div>

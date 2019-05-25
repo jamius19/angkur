@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './FontList.module.scss';
 import Font from "./Font/Font";
 import {getRandomInt} from "../../utility/UtilityFunc";
+import Navbar from "../Nav/Navbar";
 
 
 class FontList extends Component {
@@ -39,17 +40,21 @@ class FontList extends Component {
 
 
       return (
-          <div className={"mt-5 " + styles.fontContainer}>
-             {
-                this.state.fonts.map(value => {
-                   return <Font name={value.name}
-                                author={value.author}
-                                styles={value.styles}
-                                key={value.id}
-                                type={value.type}
-                                text={this.lineList[getRandomInt(0, this.lineList.length - 1)]}/>;
-                })
-             }
+          <div>
+             {this.props.singlePage ? <Navbar showBG/> : null}
+
+             <div className={"mt-5 " + styles.fontContainer}>
+                {
+                   this.state.fonts.map(value => {
+                      return <Font name={value.name}
+                                   author={value.author}
+                                   styles={value.styles}
+                                   key={value.id}
+                                   type={value.type}
+                                   text={this.lineList[getRandomInt(0, this.lineList.length - 1)]}/>;
+                   })
+                }
+             </div>
           </div>
       );
    }
