@@ -19,10 +19,26 @@
 
 .localizationBar {
   position: absolute;
+  align-items: center;
   top: -15px;
   right: 22px;
   display: none !important;
   z-index: 10;
+
+  .star {
+    margin-right: 25px;
+
+    i {
+      color: white;
+      font-size: 1.15rem;
+    }
+
+    a {
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-top: -500px;
+    }
+  }
 
   a {
     text-decoration: none;
@@ -40,10 +56,11 @@
     color: $primaryColor;
   }
 
-  li:first-of-type {
+  li:not(:last-of-type) {
     margin-right: 10px;
   }
 }
+
 
 .container {
   display: flex;
@@ -112,6 +129,7 @@
 
 
   @media (min-width: $lg) and (max-width: $xl) {
+
     .navBarBG {
       height: 140px;
     }
@@ -149,6 +167,7 @@
   }
 
   @media (min-width: $xl) {
+
     .navBarBG {
       height: 150px;
     }
@@ -165,6 +184,10 @@
       top: 5px;
       right: 12.7vw;
       display: flex !important;
+
+      .star {
+        margin-right: 30px;
+      }
 
     }
 

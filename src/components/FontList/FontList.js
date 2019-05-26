@@ -142,7 +142,7 @@ class FontList extends Component {
 
              <div className={styles.searchContainer}>
                 <div className={`${styles.search}`}>
-                   <h1 className="my-5 display-">{localization.fontTitle}</h1>
+                   <h1 className="my-5 display-4">{localization.fontTitle}</h1>
 
                    <input type="text"
                           onChange={event => {

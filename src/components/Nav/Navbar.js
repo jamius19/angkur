@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './NavBar.module.scss';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/angkur_logo.svg';
 import {Spring, config} from 'react-spring/renderprops';
 import LocalizedStrings from "react-localization";
 import Language from "../../context/Language";
@@ -78,7 +78,19 @@ class Navbar extends Component {
                         config={config.molasses}>
                    {props => (
                        <ul style={props} className={"d-flex text-light list-unstyled " + styles.localizationBar}>
+                          <li>
+                             <div className={styles.star}>
+                                <i className="fab fa-github"/>
+                                <a className="link-unstyle text-light"
+                                   href="https://github.com/nokshaia/angkur" target="_blank"
+                                   rel="noreferrer noopener">
+                                   Star Angkur
+                                </a>
+                             </div>
+                          </li>
+
                           <i className="fas fa-language"/>
+
                           <li className="nav-links">
                              <Link className={langForNavIsEN ? 'text-light' : 'text-muted'}
                                  /*onClick={(e) => this.setLang(e, 'en')}*/
