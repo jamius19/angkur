@@ -65,7 +65,7 @@ class App extends Component {
 
                                    <Route exact path={[`/${langID}/fonts`, `/${langID}/fonts/`]}
                                           component={props => {
-                                             return <FontList singlePage/>;
+                                             return <FontList singlePage showFooter/>;
                                           }}/>
 
                                    <Route exact path={[`/${langID}/font/:name`, `/${langID}/font/:name/`]}
