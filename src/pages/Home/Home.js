@@ -6,6 +6,7 @@ import LocalizedStrings from 'react-localization';
 import Language from '../../context/Language';
 import FontList from '../../components/FontList/FontList';
 import {Link} from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 
 const localization = new LocalizedStrings({
@@ -68,9 +69,8 @@ class Home extends Component {
                 </Spring>
              </header>
 
-             <FontList>
-
-             </FontList>
+             <FontList/>
+             <Footer/>
           </div>
       );
    }

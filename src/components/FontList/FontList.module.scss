@@ -2,34 +2,70 @@
 
 
 .fontContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto;
   width: 90%;
-  margin-left: 5%;
-  margin-bottom: 40px;
+  grid-gap: 20px 20px;
+  margin: 0 auto 40px auto;
+}
 
+.searchContainer {
+  text-align: center;
+  width: 100%;
+  margin: 100px auto 30px auto;
+}
 
+.search {
+  input {
+    background: url("../../assets/glass.png") no-repeat scroll 20px 11px;
+    background-size: 25px;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding: 10px 20px 10px 65px;
+    border-radius: 50px;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s;
+  }
+
+  input:focus {
+    outline: none;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s;
+  }
 }
 
 
 @media only screen {
+  @media (min-width: $sm) and (max-width: $md) {
+  }
+
   @media (min-width: $md) and (max-width: $lg) {
+    .search {
+      input {
+        width: 65%;
+      }
+    }
 
     .fontContainer {
       width: 96%;
-      margin-left: 1.5%;
+      grid-template-columns: 1fr 1fr;
     }
 
   }
 
 
   @media (min-width: $lg) and (max-width: $xl) {
+    .search {
+      input {
+        width: 65%;
+      }
+    }
 
     .fontContainer {
       width: 96%;
-      margin-left: 1.2%;
+      grid-template-columns: 1fr 1fr;
     }
 
   }
@@ -37,18 +73,28 @@
   @media (min-width: $xl) and (max-width: 1469px) {
     .fontContainer {
       width: 96%;
-      margin-left: 1.2%;
+      grid-template-columns: 1fr 1fr;
     }
 
   }
 
-  @media (min-width: 1469px) {
+  @media (min-width: $xl) {
+    .search {
+      input {
+        width: 50%;
+      }
+    }
+
+
+  }
+
+  @media (min-width: $xxl) {
     .fontContainer {
-      width: 96%;
-      margin-left: 1.2%;
+      width: 95%;
+      grid-template-columns: 1fr 1fr 1fr;
     }
-
   }
+
 }
 
 

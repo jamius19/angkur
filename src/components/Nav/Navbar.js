@@ -68,7 +68,7 @@ class Navbar extends Component {
                 {/*Language Nav*/}
                 <Spring from={{transform: 'translate3d(0px, -15px, 0px)'}}
                         to={{transform: 'translate3d(0px, 0px, 0px)'}}
-                        config={config.gentle}>
+                        config={config.molasses}>
                    {props => (
                        <ul style={props} className={"d-flex text-light list-unstyled " + styles.localizationBar}>
                           <i className="fas fa-language"/>
@@ -90,7 +90,7 @@ class Navbar extends Component {
                 {/*Normal Nav*/}
                 <Spring from={{transform: 'translate3d(0px, -20px, 0px)'}}
                         to={{transform: 'translate3d(0px, 0px, 0px)'}}
-                        config={config.gentle}>
+                        config={config.molasses}>
                    {props => (
                        <nav style={props} className={"navbar navbar-expand navbar-dark bg-transparent"}>
                           <div className={styles.container}>

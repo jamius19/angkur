@@ -21,7 +21,7 @@ class ResponsiveNav extends Component {
               from={{opacity: 0, transform: 'translate3d(0px, -80px, 0px)'}}
               enter={{opacity: 1, transform: 'translate3d(0px, 0px, 0px)'}}
               leave={{opacity: 0, transform: 'translate3d(0px, +80px, 0px)'}}
-              config={config.wobbly}>
+              config={config.stiff}>
              {item => item && (props => (
 
 
