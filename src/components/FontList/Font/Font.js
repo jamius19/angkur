@@ -57,7 +57,7 @@ class Font extends Component {
                    <h5>{this.props.type === '0' ? localization.serif : localization.sansSerif}</h5>
                 </div>
 
-                <Link to={link}><h2 className="link-unstyle">{this.props.name}</h2></Link>
+                <Link className="link-un-black" to={link}><h2>{this.props.name}</h2></Link>
                 <h5>{(isLangEn ? this.props.styles.length : numToBangla(this.props.styles.length)) + (isLangEn ? " " : "") + `${styleDescription}`}</h5>
                 <h5>{`${localization.designedBy} ${this.props.author}`}</h5>
                 <i className={"fas fa-plus-circle fa-fw " + styles.plusCircle}/>

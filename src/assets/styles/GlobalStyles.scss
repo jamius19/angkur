@@ -1,5 +1,9 @@
 @import "./Variables";
 
+.textSubMuted {
+  color: #adadad;
+}
+
 .cbtn {
   border: none;
   z-index: 10;
@@ -85,5 +89,16 @@
 .link-unstyle:hover {
   text-decoration: none;
   color: black;
+}
 
+
+.link-un-black {
+  text-decoration: none;
+  color: black;
+  text-decoration-color: black;
+}
+
+.link-un-black:hover {
+  color: black;
+  text-decoration-color: black;
 }

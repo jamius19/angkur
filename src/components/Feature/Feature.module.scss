@@ -1,0 +1,106 @@
+@import '../../assets/styles/GlobalStyles';
+
+
+.featureContainer {
+  font-size: 1.3rem;
+  margin: 70px auto;
+}
+
+.img1 {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin-left: -25px;
+}
+
+.img2 {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin-left: -5px;
+}
+
+@media only screen {
+  @media (max-width: $sm) {
+
+  }
+
+  @media (min-width: $sm) and (max-width: $md) {
+    .img1 {
+      width: 50%;
+    }
+  }
+
+
+  @media (min-width: $md) {
+    .img1 {
+      margin: auto;
+    }
+  }
+
+
+  @media (min-width: $md) and (max-width: $lg) {
+    .img1 {
+      width: 250px;
+      margin-left: -15px;
+    }
+
+    .img2 {
+      width: 350px;
+    }
+
+    .featureContainer {
+      width: 95%;
+
+      p {
+        font-size: 1.35rem;
+      }
+
+    }
+  }
+
+
+  @media (min-width: $lg) and (max-width: $xl) {
+    .img1 {
+      width: 265px;
+    }
+
+    .img2 {
+      width: 320px;
+    }
+
+
+    .featureContainer {
+      width: 80%;
+
+      p {
+        font-size: 1.35rem;
+      }
+
+    }
+  }
+
+  @media (min-width: $xl) {
+    .img1 {
+      width: 300px;
+    }
+
+    .img2 {
+      width: 400px;
+    }
+
+    .featureContainer {
+      width: 75%;
+
+      h2 {
+        font-size: 2.7rem;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 1.7rem;
+      }
+
+    }
+  }
+}

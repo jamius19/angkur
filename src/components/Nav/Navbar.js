@@ -44,7 +44,6 @@ class Navbar extends Component {
       console.log(`[Navbar.js] Changing Language to ${lang}`);
 
 
-
       let paramsToAppendLangChange = (this.props.match.params.q !== undefined ? this.props.match.params.q : "");
       this.props.history.push(`/${lang}/${paramsToAppendLangChange}`);
 
@@ -52,15 +51,23 @@ class Navbar extends Component {
    };
 
    render() {
-      //console.log(`[Navbar.js] Show Responsive Menu ${this.state.showNav}`);
       let showBG = this.props.showBG ? this.props.showBG : false;
+
+      //console.log(this.props);
 
       localization.setLanguage(this.context.lang);
       let langForNavIsEN = this.context.lang === 'en';
       let paramsToAppendLangChange = (this.props.match.url.substr(4, this.props.match.url.length) ?
           this.props.match.url.substr(4, this.props.match.url.length) : "");
 
-      //console.log(paramsToAppendLangChange);
+      let url = this.props.match.url;
+
+
+      let activeStatus = [
+         url.search(/en\/?$/) !== -1,
+         url.search(/fonts?\/?/) !== -1,
+      ];
+
 
       return (
           <div className={showBG ? styles.navBarBG : ""}>
@@ -107,18 +114,18 @@ class Navbar extends Component {
                                 <i onClick={this.toggleNavMobile} className="fas fa-bars"/>
 
                                 <ul className="navbar-nav ml-auto">
-                                   <li className="nav-item active">
+                                   <li className={`nav-item${activeStatus[0] ? ' active' : ''}`}>
                                       <Link className="nav-link"
                                             to={langForNavIsEN ? "/en" : "/bn"}>{localization.first}</Link>
                                    </li>
-                                   <li className="nav-item">
+                                   <li className={`nav-item${activeStatus[1] ? ' active' : ''}`}>
                                       <Link className="nav-link"
                                             to={`/${this.context.lang}/fonts`}>{localization.second}</Link>
                                    </li>
-                                   <li className="nav-item">
+                                   <li className={`nav-item`}>
                                       <Link className="nav-link" to="/en/about">{localization.third}</Link>
                                    </li>
-                                   <li className="nav-item">
+                                   <li className={`nav-item`}>
                                       <Link className="nav-link" to="/en/about">{localization.fourth}</Link>
                                    </li>
                                 </ul>
@@ -132,7 +139,8 @@ class Navbar extends Component {
                 <Backdrop click={this.toggleNavMobile} show={this.state.showNav}/>
                 <ResponsiveNav toggleNavMobile={this.toggleNavMobile} show={this.state.showNav}
                                localization={localization}
-                               setLang={this.setLang}/>
+                               setLang={this.setLang}
+                               activeStatus={activeStatus}/>
              </div>
           </div>
       );

@@ -7,6 +7,7 @@ import Language from '../../context/Language';
 import FontList from '../../components/FontList/FontList';
 import {Link} from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import Feature from "../../components/Feature/Feature";
 
 
 const localization = new LocalizedStrings({
@@ -30,8 +31,7 @@ class Home extends Component {
    static contextType = Language;
 
    render() {
-
-
+      window.scrollTo(0, 0);
       localization.setLanguage(this.context.lang);
 
       return (
@@ -68,6 +68,10 @@ class Home extends Component {
                    )}
                 </Spring>
              </header>
+
+             <Feature/>
+
+             <hr/>
 
              <FontList/>
              <Footer/>

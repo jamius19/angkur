@@ -117,6 +117,8 @@ class FontPage extends Component {
       localization.setLanguage(this.context.lang);
       let isLangEn = this.context.lang.toLowerCase() === 'en';
 
+      window.scrollTo(0, 0);
+
       return (
           <div>
              <Navbar showBG/>
@@ -308,7 +310,8 @@ class FontPage extends Component {
                     </div> : this.state.error ?
                         <h1 className="mt-5"><i className="fas fa-exclamation-triangle mr-2"/> Error Loading Font.
                            Please check the URL.</h1>
-                        : <h1 className="mt-5"><i className="fas fa-spinner fa-spin mr-2"/> Loading Font Details</h1>}
+                        : <h1 className="mt-5" style={{marginBottom: '105vh'}}><i
+                            className="fas fa-spinner fa-spin mr-2"/> Loading Font Details</h1>}
 
              </div>
 

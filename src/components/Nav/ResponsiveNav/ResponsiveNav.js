@@ -35,19 +35,23 @@ class ResponsiveNav extends Component {
                           <ul className={"text-light " + styles.navBar}>
                              <li className="">
                                 <i className="fas fa-home fa-fw"/>
-                                <a className="text-light" href="/">{localization.first}</a>
+                                <Link className={`${this.props.activeStatus[0] ? ' text-light' : 'textSubMuted'}`}
+                                      to={langForNavIsEN ? "/en" : "/bn"}>{localization.first}</Link>
                              </li>
                              <li className="">
                                 <i className="fas fa-th-list fa-fw"/>
-                                <a className="text-light" href="/fonts">{localization.second}</a>
+                                <Link className={`${this.props.activeStatus[1] ? ' text-light' : 'textSubMuted'}`}
+                                      to={`/${langForNavIsEN ? 'en' : 'bn'}/fonts`}>{localization.second}</Link>
                              </li>
                              <li className="">
                                 <i className="fas fa-question-circle fa-fw"/>
-                                <a className="text-light" href="/about">{localization.third}</a>
+                                <Link className={`${this.props.activeStatus[0] ? ' text-light' : 'textSubMuted'}`}
+                                      to="/en/about">{localization.third}</Link>
                              </li>
                              <li className="">
                                 <i className="fas fa-user-friends fa-fw"/>
-                                <a className="text-light" href="/about">{localization.fourth}</a>
+                                <Link className={`${this.props.activeStatus[0] ? ' text-light' : 'textSubMuted'}`}
+                                      to="/en/about">{localization.fourth}</Link>
                              </li>
                           </ul>
                           <hr style={{backgroundColor: '#404040'}}/>

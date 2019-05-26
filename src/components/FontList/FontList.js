@@ -9,10 +9,12 @@ import Language from "../../context/Language";
 
 const localization = new LocalizedStrings({
    bn: {
+      fontTitle: 'ফন্টলিস্ট',
       searchPrompt: 'এখানে ফন্ট সার্চ করুন ...',
       searchNot: 'দুঃখিত! আপনার সার্চে কোনো ফন্ট খুঁজে পাওয়া যায় নি!',
    }
    , en: {
+      fontTitle: 'Fonts List',
       searchPrompt: 'Search Some fonts ...',
       searchNot: 'Sorry! No fonts were found matching your search!',
    },
@@ -45,15 +47,15 @@ class FontList extends Component {
 
 
    componentDidMount() {
-      /*fetch("https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/fonts.json")
+      fetch("https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/fonts.json")
           .then(value => value.json())
           .then(value => {
              this.setState({
                 fonts: value.fonts,
              });
-          });*/
+          });
 
-      let arr = [
+      /*let arr = [
          {
             "id": 0,
             "name": "aaa",
@@ -122,26 +124,26 @@ class FontList extends Component {
          }
       ];
 
-
       setTimeout(() => {
          this.setState({
             fonts: arr,
          })
-      }, 1000);
+      }, 1000);*/
    }
 
    render() {
       localization.setLanguage(this.context.lang);
-      let visibleFonts = 0;
 
 
       return (
-          <div>
+          <section>
              {this.props.singlePage ? <Navbar showBG/> : null}
 
 
              <div className={styles.searchContainer}>
                 <div className={`${styles.search}`}>
+                   <h1 className="my-5 display-">{localization.fontTitle}</h1>
+
                    <input type="text"
                           onChange={event => {
                              this.setState({
@@ -167,14 +169,11 @@ class FontList extends Component {
 
                    let retRes = this.state.fonts.map(value => {
 
-                      if (this.state.q === '') {
-                         visibleFonts = this.state.fonts.length;
-                      } else if (value.name.toLowerCase().search(regex)) {
+                      if (this.state.q !== '' && value.name.toLowerCase().search(regex)) {
                          return null;
                       }
 
                       fullNull = false;
-                      visibleFonts++;
 
                       return (<Font name={value.name}
                                     author={value.author}
@@ -183,14 +182,6 @@ class FontList extends Component {
                                     type={value.type}
                                     text={this.lineList[getRandomInt(0, this.lineList.length - 1)]}/>);
                    });
-
-
-                   /*for (let value in retRes) {
-                      if(value == null){
-                         fullNull = true;
-                         break;
-                      }
-                   }*/
 
 
                    return fullNull ?
@@ -203,11 +194,6 @@ class FontList extends Component {
                        (
                            <div className={"mt-5 " + styles.fontContainer}>
                               {retRes}
-
-                              {
-                                 /*  visibleFonts > 3 && visibleFonts % 3 !== 0 && document.documentElement.clientWidth > 1469 ?
-                                       <div style={{content: "", flex: '0 0 0'}}/> : null*/
-                              }
                            </div>
                        );
                 })()
@@ -216,7 +202,7 @@ class FontList extends Component {
                 this.props.showFooter ? <Footer/> : null
              }
 
-          </div>
+          </section>
       );
    }
 }
