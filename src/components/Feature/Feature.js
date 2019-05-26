@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Feature.module.scss';
-import img1 from './assets/globalcdn-min.jpg';
+import img1 from './assets/globalcdn1-min.jpg';
 import img2 from './assets/realiable3-min.jpg';
 import img3 from './assets/speed2-min.jpg';
 import LocalizedStrings from 'react-localization';
