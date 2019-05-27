@@ -6,6 +6,11 @@
   width: 95%;
   margin: 70px auto 70px auto;
   text-align: justify;
+
+  h2 {
+    text-align: left;
+    font-size: 1.8rem;
+  }
 }
 
 .featureContainer:not(:last-of-type) {
@@ -27,8 +32,15 @@
 }
 
 @media only screen {
-  @media (max-width: $sm) {
+  @media (max-width: $md) {
 
+    .featureContainer {
+
+      h2 {
+
+        font-size: 1.9rem;
+      }
+    }
   }
 
   @media (min-width: $sm) and (max-width: $md) {
@@ -43,11 +55,11 @@
     .featureContainer {
 
       h2 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
       }
 
     }
@@ -75,6 +87,9 @@
     .featureContainer {
       width: 95%;
 
+      h2 {
+        font-size: 2.2rem;
+      }
 
       p {
         font-size: 1.35rem;
@@ -98,6 +113,10 @@
     .featureContainer {
       width: 90%;
 
+      h2 {
+        font-size: 2.2rem;
+      }
+
       p {
         font-size: 1.35rem;
       }
@@ -119,12 +138,12 @@
       width: 75%;
 
       h2 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
       }
 
       p {
         margin-top: 20px;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
       }
 
     }
