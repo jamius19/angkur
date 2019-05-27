@@ -34,7 +34,7 @@ class Docs extends Component {
       return (
           <div>
              <Navbar showBG/>
-             <div className="container-c">
+             <section className="container-c">
                 <div className="row">
                    <div className="col">
                       <h1 className="my-3">{localization.title}</h1>
@@ -43,7 +43,7 @@ class Docs extends Component {
 
                    </div>
                 </div>
-             </div>
+             </section>
              <Footer/>
           </div>
       );
