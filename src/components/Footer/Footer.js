@@ -29,9 +29,11 @@ class Footer extends Component {
              <div className="container-c">
                 <div className="row">
                    <div className={`col ${styles.mainDiv}`}>
-                      <p>Made with &nbsp;<i
-                          className="fas fa-heart"/>&nbsp; from <strong>Bangladesh</strong>. &nbsp;Copyleft <span
-                          className={styles.copyLeft}>©</span> 2018.</p>
+                      <p>
+                         Made with &nbsp;<i className="fas fa-heart"/>&nbsp; from <strong>Bangladesh</strong>.
+                         Copyleft <span className={styles.copyLeft}>©</span> 2019.
+                      </p>
+
 
                       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
                          <img alt="Creative Commons License" className="mr-2"

@@ -54,14 +54,14 @@
 // Container
 .container-c {
   width: 88%;
-  margin: 0 auto;
+  margin: 60px auto;
 }
 
 
 @media only screen {
   @media (min-width: $md) and (max-width: $lg) {
     .container-c {
-      width: 80%;
+      width: 85%;
     }
   }
 

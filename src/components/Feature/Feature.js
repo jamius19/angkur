@@ -16,7 +16,7 @@ const localization = new LocalizedStrings({
       realiableTitle: 'নির্ভরযোগ্যতা গ্যারেন্টিড',
       realiableDes: 'আমরা আমাদের ফন্ট ডেলিভারির জন্য ব্যবহার করি jsDelivr, CloudFlare আর StackPatch। একসাথে একইসময়ে শেষের দুটো সার্ভিসই যদি বন্ধ হয় তাহলেই' +
           ' কেবলমাত্র আমাদের সার্ভিসে বিঘ্ন ঘটা সম্ভব, এবং এদের প্রত্যেকের আপটাইমই ৯৯.৯৯% এরও উপরে। এছাড়াও আমাদের GitHub রিপোসিটরি কোনো কারণে ডাউন থাকলেও ' +
-          'jsDelivr সকল ফাইল সার্ভ করতে থাকবে। মোটকথা, আমাদের ফন্ট সার্ভিস সবসময় সচল থাকবেই। গ্যারেন্টিড।',
+          'jsDelivr সকল ফাইল সার্ভ করতে থাকবে। মোটকথা, আমাদের ফন্ট সার্ভিস সবসময় সচল থাকবেই। গ্যারেন্টিড!',
       globalTitle: 'বিশ্বব্যাপী প্রাপ্যতা',
       globalDes: 'আমাদের ফাইল বিশ্বব্যাপী প্রায় ৭৫০টিরও বেশি এন্ড-পয়েন্ট থেকে সার্ভ করা হয়। এতে আপনি পাচ্ছেন সর্বোচ্চ গতিতে ফাইল লোড হওয়া এবং ফাইল পাওয়ার নিশ্চয়তা। আমাদের প্রধান CDN ' +
           'jsDelivr সর্বমোট চারটি ভিন্ন ভিন্ন CDN এবং দুইটি DNS প্রোভাইডার ব্যবহার করে, যার ফলে প্রতি লেয়ারেই আপনি পাচ্ছেন এক্সট্রা সুরক্ষা ব্যবস্থা এবং মনের শান্তি।',
@@ -28,9 +28,9 @@ const localization = new LocalizedStrings({
           'formats for cross browser compatibility.',
       speedDes2: 'So you can be sure that all our fonts will load on all browsers! Fast!',
       realiableTitle: 'Reliability Guaranteed',
-      realiableDes: 'We use jsDelivr, CloudFlare and StackPatch as our content delivery network for fonts. For our services to go down ' +
-          'at least the last two services have to go down simultaneously. And they both have a uptime of 99.99%+. Even if our GitHub repository ' +
-          'is down, jsDelivr will continue the server the files. Bottom line, our files will always be available for,',
+      realiableDes: 'We use jsDelivr, CloudFlare and StackPatch as our content delivery networks for fonts. For our services to go down ' +
+          'at least the last two services have to go down simultaneously. And they both have a uptime of 99.99%+. Also even if our GitHub repository ' +
+          'is down, jsDelivr will continue the serve the files. Bottom line, our files will always be available for you. Guaranteed!',
       globalTitle: 'Global Availability',
       globalDes: 'Our files are served from over 750 end-points all over the world. That\'s why you can be sure of file availability  ' +
           ' Our main CDN, jsDelivr uses four different CDNs along with two different DNS providers. What you are getting out of these' +
@@ -71,7 +71,7 @@ class Feature extends Component {
                 </div>
              </div>
 
-             <div className={`container-fluid ${styles.featureContainer}`}>
+             <div className={`container-fluid  ${styles.featureContainer}`}>
                 <div className="row">
                    <div className="col-md-6 col-lg-5 order-0 order-md-1">
                       <img className={styles.img2} src={img2} alt=""/>

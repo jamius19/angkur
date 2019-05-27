@@ -66,6 +66,8 @@ class Navbar extends Component {
       let activeStatus = [
          url.search(/en\/?$/) !== -1,
          url.search(/fonts?\/?/) !== -1,
+         url.search(/docs?\/?$/) !== -1,
+         url.search(/about?\/?$/) !== -1,
       ];
 
 
@@ -134,10 +136,11 @@ class Navbar extends Component {
                                       <Link className="nav-link"
                                             to={`/${this.context.lang}/fonts`}>{localization.second}</Link>
                                    </li>
-                                   <li className={`nav-item`}>
-                                      <Link className="nav-link" to="/en/about">{localization.third}</Link>
+                                   <li className={`nav-item${activeStatus[2] ? ' active' : ''}`}>
+                                      <Link className="nav-link"
+                                            to={`/${this.context.lang}/docs`}>{localization.third}</Link>
                                    </li>
-                                   <li className={`nav-item`}>
+                                   <li className={`nav-item${activeStatus[3] ? ' active' : ''}`}>
                                       <Link className="nav-link" to="/en/about">{localization.fourth}</Link>
                                    </li>
                                 </ul>

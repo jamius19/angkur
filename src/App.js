@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Navbar from "./components/Nav/Navbar";
 import FontPage from "./pages/FontPage/FontPage";
 import FontList from "./components/FontList/FontList";
+import Docs from "./pages/Docs/Docs";
 
 
 const lang = new LocalizedStrings({
@@ -15,7 +16,6 @@ const lang = new LocalizedStrings({
    }, en: {
       title: 'Angkur - Bangla Web Font'
    },
-
 });
 
 
@@ -60,8 +60,6 @@ class App extends Component {
                              <Language.Provider value={{lang: props.match.params['lang'], changeLang: this.changeLang}}>
                                 <Switch>
                                    <Route exact path={[`/${langID}`, `/${langID}/`]} component={props => <Home/>}/>
-                                   <Route exact path={[`/${langID}/about`, `/${langID}/about/`]}
-                                          component={props => <Navbar/>}/>
 
                                    <Route exact path={[`/${langID}/fonts`, `/${langID}/fonts/`]}
                                           component={props => {
@@ -73,6 +71,14 @@ class App extends Component {
                                              //console.log(props);
                                              return <FontPage name={props.match.params['name'].replace(/_/g, " ")}/>;
                                           }}/>
+
+                                   <Route exact path={[`/${langID}/docs`, `/${langID}/docs/`]}
+                                          component={props => {
+                                             return <Docs/>;
+                                          }}/>
+
+                                   <Route exact path={[`/${langID}/about`, `/${langID}/about/`]}
+                                          component={props => <Navbar showBG/>}/>
                                 </Switch>
                              </Language.Provider>
                          );
@@ -83,7 +89,7 @@ class App extends Component {
                    <Route path="/:q(.*)" component={
                       props => {
                          console.log('nothing detected');
-                         let lang = getCookie('lang') ? getCookie('lang') : 'bn';
+                         let lang = getCookie('lang') ? getCookie('lang') : 'en';
                          return <Redirect to={`/${lang}${props.location.pathname}`}/>;
                       }
                    }/>
