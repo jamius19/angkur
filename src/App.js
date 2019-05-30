@@ -8,6 +8,7 @@ import Navbar from "./components/Nav/Navbar";
 import FontPage from "./pages/FontPage/FontPage";
 import FontList from "./components/FontList/FontList";
 import Docs from "./pages/Docs/Docs";
+import About from "./pages/About/About";
 
 
 const lang = new LocalizedStrings({
@@ -78,7 +79,7 @@ class App extends Component {
                                           }}/>
 
                                    <Route exact path={[`/${langID}/about`, `/${langID}/about/`]}
-                                          component={props => <Navbar showBG/>}/>
+                                          component={props => <About/>}/>
                                 </Switch>
                              </Language.Provider>
                          );

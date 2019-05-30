@@ -5,7 +5,6 @@ import LocalizedStrings from 'react-localization';
 import {getRandomInt, numToBangla} from "../../utility/UtilityFunc";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 import {atomDark} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import ReactTooltip from 'react-tooltip';
 import Language from "../../context/Language";
 import Footer from "../../components/Footer/Footer";
 
@@ -84,7 +83,7 @@ class FontPage extends Component {
       for (let i = 0; i < this.state.font.styles.length; i++) {
          let delimeter = i === 0 ? "" : ",";
 
-         combineString += delimeter + `gh/nokshaia/angkur@latest/PublicFonts/${this.fontName}/stylesheet_${this.state.font.styles[i]}.min.css`;
+         combineString += delimeter + `gh/nokshaia/angkur@latest/PublicFonts/${this.fontName}/stylesheet_${this.state.font.styles[i]}.css`;
       }
 
       return combineString;
@@ -129,7 +128,7 @@ class FontPage extends Component {
                     <div>
                        {
                           this.state.font.styles.map(value => {
-                             let styleLink = `https://cdn.jsdelivr.net/gh/nokshaia/angkur@master/PublicFonts/${this.fontName}/stylesheet_${value}_DisplaySwap.min.css`;
+                             let styleLink = `https://cdn.jsdelivr.net/gh/nokshaia/angkur@master/PublicFonts/${this.fontName}/stylesheet_${value}_DisplaySwap.css`;
                              return <link key={value} rel="stylesheet" href={styleLink}/>
                           })
                        }
@@ -215,25 +214,19 @@ class FontPage extends Component {
 
                           {
                              this.state.font.styles.map(value => {
-                                const codeString = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/${this.fontName}/stylesheet_${value}.min.css"/>`;
+                                const codeString = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/${this.fontName}/stylesheet_${value}.css"/>`;
 
                                 return (
                                     <div className={styles.fontCopyDiv} key={value}>
                                        <p className="font-weight-bold">{localization.fontWeightText}: {localization[value.toLowerCase()]}</p>
 
                                        <div className={styles.codeCopy}>
-                                          <button
-                                              data-tip={`${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`}
-                                              data-event='click' data-event-off='mousemove touchstart'
-                                              data-delay-hide='1000'
-                                              data-for={`tool1${value}`}>
+                                          <button onClick={(event) => {
+                                             event.currentTarget.innerHTML = `${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`;
+                                             copyToClipboard(codeString);
+                                          }}>
                                              <i className="far fa-copy"/> {localization.copy}
                                           </button>
-
-                                          <ReactTooltip id={`tool1${value}`} afterShow={(event) => {
-                                             copyToClipboard(codeString);
-                                          }}/>
-
 
                                           <SyntaxHighlighter language='html'
                                                              style={atomDark}>{codeString}</SyntaxHighlighter>
@@ -251,17 +244,13 @@ class FontPage extends Component {
                                     <p className="font-weight-bold">{localization.allcss}</p>
 
                                     <div className={styles.codeCopy}>
-                                       <button
-                                           data-tip={`${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`}
-                                           data-event='click' data-event-off='mousemove touchstart'
-                                           data-delay-hide='1000'
-                                           data-for='tool2'>
+                                       <button onClick={(event) => {
+                                          event.currentTarget.innerHTML = `${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`;
+                                          copyToClipboard(`<link rel="stylesheet" href="${this.getAllStyles()}"/>`);
+                                       }}>
                                           <i className="far fa-copy"/> {localization.copy}
                                        </button>
 
-                                       <ReactTooltip id='tool2' afterShow={(event) => {
-                                          copyToClipboard(`<link rel="stylesheet" href="${this.getAllStyles()}"/>`);
-                                       }}/>
 
                                        <SyntaxHighlighter language='html' style={atomDark}>
                                           {`<link rel="stylesheet" href="${this.getAllStyles()}"/>`}
@@ -276,14 +265,12 @@ class FontPage extends Component {
                           <div>
 
                              <div className={styles.codeCopy}>
-                                <button data-tip={`${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`}
-                                        data-event='click'
-                                        data-event-off='mousemove touchstart' data-delay-hide='1000' data-for='tool3'>
+                                <button onClick={(event) => {
+                                   event.currentTarget.innerHTML = `${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`;
+                                   copyToClipboard(`* {\n\tfont-family: '${this.state.font.name}', ${this.state.font.type === "0" ? 'serif' : 'sans-serif'};\n}`);
+                                }}>
                                    <i className="far fa-copy"/> {localization.copy}
                                 </button>
-                                <ReactTooltip id='tool3' afterShow={(event) => {
-                                   copyToClipboard(`* {\n\tfont-family: '${this.state.font.name}', ${this.state.font.type === "0" ? 'serif' : 'sans-serif'};\n}`);
-                                }}/>
 
                                 <SyntaxHighlighter language='css'
                                                    style={atomDark}>{`* {\n\tfont-family: '${this.state.font.name}', `

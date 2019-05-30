@@ -40,6 +40,15 @@ const localization = new LocalizedStrings({
           'যেমন আমরা অংকুরের জন্য Google Fonts থেকে Raleway ফন্টটি এবং বাংলার জন্য SolaimanLipi ফন্টটি ব্যবহার করছি। এটার জন্য আমাদের CSS এর কোডটি নিচের মত।',
       useCSSDes1: 'এর মাধ্যমে আমরা ইংরেজি যেকোনো লেখার অন্য Raleway ফন্টটি এবং বাংলার জন্য SolaimanLipi ফন্টটি ব্যবহার করছি স্বয়ংক্রিয়ভাবে।</br>' +
           'আপনার ওয়েবসাইটে যদি কোনো ইংরেজি লেখা থাকে তাহলে আমরা এই পদ্ধতি অনূসরণ করার জন্য পরামর্শ দিবো।',
+      swapTitle: `কিভাবে CSS Font Display অ্যাট্রিবিউট ব্যবহার করবেন আমাদের ফন্টের সাথে?`,
+      swapDes: `আমরা আমাদের সব ফন্টের জন্য আলাদা আরেকটা CSS ফাইল সার্ভ করে থাকি যেটাতে Font Display অ্যাট্রিবিউটের ভ্যালু Swap দেয়া আছে। Font Display এর ব্যাপারে আরো জানতে 
+        <a class="link-unstyle text-primary" href="https://css-tricks.com/almanac/properties/f/font-display/" target="_blank">এই লিংকে যান।</a> Font Display অ্যাট্রিবিউটসহ ফাইলটি পাবার জন্য আপনার পছন্দের ফন্টের লিংকের এর শেষে শুধু &nbsp;
+        <code>_DisplaySwap.css</code> যোগ করুন নিচে মত।`,
+      swapDes1: `উপরের লিংকের বদলে যেকোনো ফন্টের জন্য শেষে _DisplaySwap.css যোগ করুন।`,
+      contributeTitle: 'কিভাবে কন্ট্রিবিউট করবেন?',
+      contributeDes: `অংকুর একটি সম্পূর্ণ ওপেন সোর্স প্রজেক্ট। আমাদের কাছে আপনার যেকোনো রকম কন্ট্রিবিউশন স্বাদরে গ্রহণযোগ্য।<br/>
+            কিভাবে কন্ট্রিবিউট করতে পারবেন এই ব্যাপারে আরো জানতে <a class="link-unstyle text-primary" href="https://github.com/nokshaia/angkur">এই লিংকে যান।</a>`
+
    }, en: {
       // How we Deliver you files
 
@@ -70,6 +79,14 @@ const localization = new LocalizedStrings({
           'For example, here at Angkur, we\'re using Raleway from Google Fonts for English content and SolaimanLipi for Bangla content. Our CSS code is given below.',
       useCSSDes1: 'Now we\'ll be using Raleway for English and SolaimanLipi for Bangla contents automatically.</br>' +
           'If your website contains English contents, we\'ll recommend this approach.',
+      swapTitle: `How to use CSS Font Display attribute with our fonts?`,
+      swapDes: `With every font we supply another CSS file which has the Font Display attribute set to Swap. To learn more about CSS Font Display  
+        <a class="link-unstyle text-primary" href="https://css-tricks.com/almanac/properties/f/font-display/" target="_blank">goto this link.</a> Add &nbsp;
+        <code>_DisplaySwap.css</code> at the end of your chosen fonts' url like below to get the CSS stylesheet.`,
+      swapDes1: `Instead of using the code above, add _DisplaySwap.css at the end of any fonts' URL like below.`,
+      contributeTitle: 'How you can contribute?',
+      contributeDes: `Angkur is an Open Source project. We welcome any kind of contributions.<br/>
+        To learn more about how you can contribute <a class="link-unstyle text-primary" href="https://github.com/nokshaia/angkur">goto this link.</a>`
    },
 });
 
@@ -102,7 +119,7 @@ class Docs extends Component {
                          <p className="lead" dangerouslySetInnerHTML={{__html: localization.useDes}}/>
 
                          <SyntaxHighlighter language='html' style={atomDark}>
-                            {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/stylesheet_Normal.min.css"/>`}
+                            {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/stylesheet_Normal.css"/>`}
                          </SyntaxHighlighter>
 
                          <p className="lead mt-4" dangerouslySetInnerHTML={{__html: localization.useCSS}}/>
@@ -113,10 +130,30 @@ class Docs extends Component {
                          <h4 className="mt-5 font-weight-bold">{localization.useEnFont}</h4>
                          <p className="lead mt-2" dangerouslySetInnerHTML={{__html: localization.useCSSDes}}/>
                          <SyntaxHighlighter language='css' style={atomDark}>
-                            {`* {\n\tfont-family: 'Raleway','Ekushey Mukto', sans-serif;\n}`}
+                            {`* {\n\tfont-family: 'Raleway','SolaimanLipi', sans-serif;\n}`}
                          </SyntaxHighlighter>
                          <p className="lead mt-3" dangerouslySetInnerHTML={{__html: localization.useCSSDes1}}/>
 
+                      </div>
+
+                      <div>
+                         <h2 className="mt-5">{localization.swapTitle}</h2>
+                         <p className="lead mb-4" dangerouslySetInnerHTML={{__html: localization.swapDes}}/>
+
+                         <SyntaxHighlighter language='html' style={atomDark}>
+                            {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/stylesheet_Normal.css"/>`}
+                         </SyntaxHighlighter>
+
+                         <p className="lead" dangerouslySetInnerHTML={{__html: localization.swapDes1}}/>
+
+                         <SyntaxHighlighter language='html' style={atomDark}>
+                            {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/stylesheet_Normal_DisplaySwap.css"/>`}
+                         </SyntaxHighlighter>
+                      </div>
+
+                      <div>
+                         <h2 className="mt-5">{localization.contributeTitle}</h2>
+                         <p className="lead mb-4" dangerouslySetInnerHTML={{__html: localization.contributeDes}}/>
                       </div>
                    </div>
                 </div>
