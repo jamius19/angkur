@@ -6,15 +6,18 @@ import Navbar from "../Nav/Navbar";
 import Footer from "../Footer/Footer";
 import LocalizedStrings from "react-localization";
 import Language from "../../context/Language";
+import {Helmet} from "react-helmet";
 
 const localization = new LocalizedStrings({
    bn: {
       fontTitle: 'ফন্টলিস্ট',
+      fontdes: 'আমাদের কালেকশনে থাকা সব বাংলা ওয়েব ফন্ট ব্রাউজ করুন। আপনার পছন্দের ফন্ট অ্যাড করুন আপনার ওয়েবসাইটে।',
       searchPrompt: 'এখানে ফন্ট সার্চ করুন ...',
       searchNot: 'দুঃখিত! আপনার সার্চে কোনো ফন্ট খুঁজে পাওয়া যায় নি!',
    }
    , en: {
       fontTitle: 'Fonts List',
+      fontdes: 'Browse all of our Bangla Web Fonts collection. Add your favourite font to your website.',
       searchPrompt: 'Search Some fonts ...',
       searchNot: 'Sorry! No fonts were found matching your search!',
    },
@@ -137,7 +140,19 @@ class FontList extends Component {
 
       return (
           <section>
-             {this.props.singlePage ? <Navbar showBG/> : null}
+             {this.props.singlePage ?
+                 <div>
+                    <Navbar showBG/>
+                    <Helmet>
+                       <title>{localization.fontTitle} - {this.context.lang === 'en' ? 'Angkur' : 'অংকুর'}</title>
+                       <meta property="description" content={`${localization.fontdes}`}/>
+
+                       <meta property="og:title"
+                             content={`${localization.fontTitle} - ${this.context.lang === 'en' ? 'Angkur' : 'অংকুর'}`}/>
+                       <meta property="og:description" content={`${localization.fontdes}`}/>
+                    </Helmet>
+                 </div>
+                 : null}
 
 
              <div className={styles.searchContainer}>

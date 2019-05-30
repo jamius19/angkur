@@ -8,17 +8,20 @@ import FontList from '../../components/FontList/FontList';
 import {Link} from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Feature from "../../components/Feature/Feature";
+import {Helmet} from "react-helmet";
 
 
 const localization = new LocalizedStrings({
    bn: {
       HeroTitle: 'আপনার ওয়েবসাইটে বাংলা ওয়েব ফন্ট অ্যাড করুন',
+      des: 'আপনার ওয়েবসাইটে বাংলা ওয়েব ফন্ট অ্যাড করুন। দ্রুত, সহজে এবং বিনামূল্যে।',
       HeroSubTitle: 'সহজে এবং বিনামূল্যে',
       CalltoActionButton: 'ফন্টগুলো দেখুন',
       SecondaryButton: 'আরো জানুন',
    },
    en: {
       HeroTitle: 'Add Bangla Web Fonts to your Website',
+      des: `Add Bangla Web Fonts to your Website. It's fast, free and easy.`,
       HeroSubTitle: 'It\'s Free and Easy',
       CalltoActionButton: 'Browse Fonts',
       SecondaryButton: 'Learn More',
@@ -36,9 +39,18 @@ class Home extends Component {
 
       return (
           <div>
+
+             <Helmet>
+                <title>{this.context.lang === 'en' ? 'Angkur - Bangla Web Fonts' : 'অংকুর - বাংলা ওয়েব ফন্ট'}</title>
+                <meta property="description" content={`${localization.des}`}/>
+
+                <meta property="og:title"
+                      content={this.context.lang === 'en' ? 'Angkur - Bangla Web Fonts' : 'অংকুর - বাংলা ওয়েব ফন্ট'}/>
+                <meta property="og:description" content={`${localization.des}`}/>
+             </Helmet>
+
+
              <header className={styles.HeroBg}>
-
-
                 <Navbar/>
 
                 <Spring from={{transform: 'translate3d(0px, +20px, 0px)'}}

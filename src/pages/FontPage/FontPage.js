@@ -7,6 +7,7 @@ import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 import {atomDark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Language from "../../context/Language";
 import Footer from "../../components/Footer/Footer";
+import {Helmet} from "react-helmet";
 
 const localization = new LocalizedStrings({
    bn: {
@@ -29,6 +30,7 @@ const localization = new LocalizedStrings({
       dl2: 'ফন্টটি আপনার ডিভাইসেও ডাউনলোড করতে পারবেন।',
       copy: 'কপি',
       copyConfirm: 'কপি হয়েছে!',
+      des: 'ফন্টটি আপনার ওয়েবসাইটে অ্যাড করুন বা এখান থেকে বিনামূল্যে আপনার ডিভাইসের জন্য ডাউনলোড করুন।'
    },
    en: {
       chars: 'Characters',
@@ -50,6 +52,7 @@ const localization = new LocalizedStrings({
       dl2: 'font using the link(s) below for your device.',
       copy: 'Copy',
       copyConfirm: 'Copied!',
+      des: 'font to your website for free or downland it for your device.'
    },
 });
 
@@ -120,6 +123,18 @@ class FontPage extends Component {
 
       return (
           <div>
+             <Helmet>
+                <title>{this.props.name} {this.context.lang === 'en' ? 'Web Font - Angkur' : 'ওয়েব ফন্ট - অংকুর'}</title>
+                <meta property="description" content={`${this.context.lang === 'en' ?
+                    `Add ${this.props.name} ${localization.des}` : `${this.props.name} ${localization.des}`}`}/>
+
+
+                <meta property="og:title"
+                      content={`${this.props.name + " Web Font"} - ${this.context.lang === 'en' ? 'Angkur' : 'অংকুর'}`}/>
+                <meta property="og:description" content={`${this.context.lang === 'en' ?
+                    `Add ${this.props.name} ${localization.des}` : `${this.props.name} ${localization.des}`}`}/>
+             </Helmet>
+
              <Navbar showBG/>
 
              <div className={`container-c mb-5`}>

@@ -6,13 +6,14 @@ import LocalizedStrings from 'react-localization';
 import Language from "../../context/Language";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 import {atomDark} from "react-syntax-highlighter/dist/esm/styles/prism";
-
+import {Helmet} from 'react-helmet';
 
 const localization = new LocalizedStrings({
    bn: {
       // How we Deliver you files
 
       title: 'ডকুমেন্টেশন',
+      des: 'আমাদের ওয়েব ফন্ট কিভাবে আপনার ওয়েবসাইটে ব্যবহার করবেন সেই বিষয়ে ডকুমেন্টেশন দেখুন।',
       delivrTitle: 'কন্টেন্ট ডেলিভারির মাধ্যম',
       delivrTitleDes: 'অংকুর সকল ফাইল jsDelivr এর মাধ্যমে সার্ভ করে থাকে। এ ব্যাপারে আরো জানতে ' +
           '<a class="link-unstyle text-primary" href="https://www.jsdelivr.com/network" target="_blank">এই লিংকে যান।</a> ',
@@ -48,11 +49,11 @@ const localization = new LocalizedStrings({
       contributeTitle: 'কিভাবে কন্ট্রিবিউট করবেন?',
       contributeDes: `অংকুর একটি সম্পূর্ণ ওপেন সোর্স প্রজেক্ট। আমাদের কাছে আপনার যেকোনো রকম কন্ট্রিবিউশন স্বাদরে গ্রহণযোগ্য।<br/>
             কিভাবে কন্ট্রিবিউট করতে পারবেন এই ব্যাপারে আরো জানতে <a class="link-unstyle text-primary" href="https://github.com/nokshaia/angkur">এই লিংকে যান।</a>`
-
    }, en: {
       // How we Deliver you files
 
       title: 'Documentation',
+      des: 'See our documentation about how to use our web fonts.',
       delivrTitle: 'Content Delivery Method',
       delivrTitleDes: 'Angkur uses jsDelivr for serving all its files. To learn more ' +
           '<a class="link-unstyle text-primary" href="https://www.jsdelivr.com/network" target="_blank">Click here.</a></span>',
@@ -101,6 +102,15 @@ class Docs extends Component {
 
       return (
           <div>
+             <Helmet>
+                <title>{localization.title} - {this.context.lang === 'en' ? 'Angkur' : 'অংকুর'}</title>
+                <meta name="description" content={localization.des}/>
+
+                <meta property="og:title"
+                      content={`${localization.title} - ${this.context.lang === 'en' ? 'Angkur' : 'অংকুর'}`}/>
+                <meta property="og:description" content={localization.des}/>
+             </Helmet>
+
              <Navbar showBG/>
              <section className="container-c">
                 <div className="row">

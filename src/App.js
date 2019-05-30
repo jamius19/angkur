@@ -54,7 +54,7 @@ class App extends Component {
 
                          let langID = props.match.params['lang'];
                          lang.setLanguage(props.match.params['lang']);
-                         document.title = lang.title;
+                         //document.title = lang.title;
 
                          setCookie('lang', props.match.params['lang']);
                          return (

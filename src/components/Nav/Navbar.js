@@ -14,13 +14,13 @@ const localization = new LocalizedStrings({
       first: 'হোম',
       second: 'ফন্টলিস্ট',
       third: 'ডকুমেন্টেশন',
-      fourth: 'আমাদের সম্পর্কে',
+      fourth: 'তথ্য',
    }
    , en: {
       first: 'Home',
       second: 'Fonts List',
       third: 'Docs',
-      fourth: 'About Us',
+      fourth: 'About',
    },
 
 });
