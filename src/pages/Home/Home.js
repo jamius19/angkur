@@ -67,11 +67,15 @@ class Home extends Component {
                                 {localization.HeroSubTitle}
                              </h2>
                              <div className={"d-flex flex-column flex-lg-row " + styles.coaButtons}>
-                                <Link to={`/en/fonts`}>
+                                 <Link to={`/${this.context.lang}/fonts`}>
                                    <button
                                        className={"cbtn cbtn-orange " + styles.cbtn}>{localization.CalltoActionButton}</button>
                                 </Link>
-                                <button className="cbtn cbtn-outline-orange">{localization.SecondaryButton}</button>
+                                 <Link to={`/${this.context.lang}/docs`}>
+                                     <button
+                                         className="cbtn cbtn-outline-orange">{localization.SecondaryButton}</button>
+
+                                 </Link>
                              </div>
                           </div>
                        </div>

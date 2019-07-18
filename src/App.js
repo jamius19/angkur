@@ -4,7 +4,6 @@ import {getCookie, setCookie} from "./utility/UtilityFunc";
 import Language from "./context/Language";
 import LocalizedStrings from 'react-localization';
 import Home from "./pages/Home/Home";
-import Navbar from "./components/Nav/Navbar";
 import FontPage from "./pages/FontPage/FontPage";
 import FontList from "./components/FontList/FontList";
 import Docs from "./pages/Docs/Docs";

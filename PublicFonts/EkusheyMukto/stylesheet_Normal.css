@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Ekushey Mukto';
-    src: url('https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/hinted-subset-EkusheyMukto.eot');
+    src: url('hinted-subset-EkusheyMukto.eot');
     src: local('Ekushey Mukto'), local('EkusheyMukto'),
-    url('https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/hinted-subset-EkusheyMukto.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/hinted-subset-EkusheyMukto.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/hinted-subset-EkusheyMukto.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/EkusheyMukto/hinted-subset-EkusheyMukto.ttf') format('truetype');
+    url('hinted-subset-EkusheyMukto.eot?#iefix') format('embedded-opentype'),
+    url('hinted-subset-EkusheyMukto.woff2') format('woff2'),
+    url('hinted-subset-EkusheyMukto.woff') format('woff'),
+    url('hinted-subset-EkusheyMukto.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

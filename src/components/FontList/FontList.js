@@ -202,7 +202,7 @@ class FontList extends Component {
                    return fullNull ?
                        (
                            <div className="container">
-                              <h1 className="mx-auto mt-4">{localization.searchNot} 😓😓</h1>
+                               <h2 className={"mx-auto mt-4 " + styles.searchTitle}>{localization.searchNot} 😓😓</h2>
                            </div>
                        )
                        :

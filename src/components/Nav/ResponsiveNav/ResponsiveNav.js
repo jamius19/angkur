@@ -38,23 +38,27 @@ class ResponsiveNav extends Component {
                           <ul className={"text-light " + styles.navBar}>
                              <li className="">
                                 <i className="fas fa-home fa-fw"/>
-                                <Link className={`${this.props.activeStatus[0] ? ' text-light' : 'textSubMuted'}`}
-                                      to={langForNavIsEN ? "/en" : "/bn"}>{localization.first}</Link>
+                                <Link
+                                    className={`${this.props.activeStatus[0] ? ' text-light' : 'textSubMuted'} link-unstyle text-light`}
+                                    to={langForNavIsEN ? "/en" : "/bn"}>{localization.first}</Link>
                              </li>
                              <li className="">
                                 <i className="fas fa-th-list fa-fw"/>
-                                <Link className={`${this.props.activeStatus[1] ? ' text-light' : 'textSubMuted'}`}
-                                      to={`/${langForNavIsEN ? 'en' : 'bn'}/fonts`}>{localization.second}</Link>
+                                <Link
+                                    className={`${this.props.activeStatus[1] ? ' text-light' : 'textSubMuted'} link-unstyle text-light`}
+                                    to={`/${langForNavIsEN ? 'en' : 'bn'}/fonts`}>{localization.second}</Link>
                              </li>
                              <li className="">
                                 <i className="fas fa-question-circle fa-fw"/>
-                                <Link className={`${this.props.activeStatus[2] ? ' text-light' : 'textSubMuted'}`}
-                                      to={`/${langForNavIsEN ? 'en' : 'bn'}/docs`}>{localization.third}</Link>
+                                <Link
+                                    className={`${this.props.activeStatus[2] ? ' text-light' : 'textSubMuted'} link-unstyle text-light`}
+                                    to={`/${langForNavIsEN ? 'en' : 'bn'}/docs`}>{localization.third}</Link>
                              </li>
                              <li className="">
                                 <i className="fas fa-user-friends fa-fw"/>
-                                <Link className={`${this.props.activeStatus[3] ? ' text-light' : 'textSubMuted'}`}
-                                      to={`/${langForNavIsEN ? 'en' : 'bn'}/about`}>{localization.fourth}</Link>
+                                <Link
+                                    className={`${this.props.activeStatus[3] ? ' text-light' : 'textSubMuted'} link-unstyle text-light`}
+                                    to={`/${langForNavIsEN ? 'en' : 'bn'}/about`}>{localization.fourth}</Link>
                              </li>
                           </ul>
 

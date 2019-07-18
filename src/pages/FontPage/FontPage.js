@@ -26,7 +26,7 @@ const localization = new LocalizedStrings({
       code1: 'কোডগুলো আপনার ডকুমেন্টের',
       code2: 'সেকশনে কপি করুন।',
       typeface: 'এরপর আপনার CSS ফাইলে ডিফল্ট ফন্ট ফেস পরিবর্তন করুন।',
-      dl1: 'আপনি নিচে বাটনে ক্লিক করে',
+      dl1: 'আপনি নিচে বাটনে ক্লিক করে ',
       dl2: 'ফন্টটি আপনার ডিভাইসেও ডাউনলোড করতে পারবেন।',
       copy: 'কপি',
       copyConfirm: 'কপি হয়েছে!',
@@ -48,7 +48,7 @@ const localization = new LocalizedStrings({
       code1: 'Insert the code inside your',
       code2: 'section.',
       typeface: 'Then change the default typeface in your CSS files.',
-      dl1: 'You can also Download',
+      dl1: 'You can also Download ',
       dl2: 'font using the link(s) below for your device.',
       copy: 'Copy',
       copyConfirm: 'Copied!',
@@ -178,10 +178,13 @@ class FontPage extends Component {
                                       অ আ ই ঈ উ ঊ ঋ এ ঐ ও ঔ
                                    </p>
                                    <p>
-                                      ক খ গ ঘ ঙ চ ছ জ ঝ ঞ ট ঠ ড ঢ ণ ত থ দ ধ ন প ফ ব ভ ম য র ল শ ষ স হ ড় ঢ় য় ৎ ং ঃ ঁ
+                                      ক খ গ ঘ ঙ চ ছ জ ঝ ঞ ট ঠ ড ঢ ণ ত থ দ ধ ন প ফ ব ভ ম য র ল শ ষ স হ ড় ঢ় য় ৎ
                                    </p>
                                    <p>
                                       ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯ ০
+                                   </p>
+                                   <p>
+                                      কে কু কূ কি কী কো কৌ কৈ কং কঃ কঁ
                                    </p>
                                    <p>
                                       ? ! । - ;
@@ -229,7 +232,7 @@ class FontPage extends Component {
 
                           {
                              this.state.font.styles.map(value => {
-                                const codeString = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/${this.fontName}/stylesheet_${value}.css"/>`;
+                                const codeString = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nokshaia/angkur@latest/PublicFonts/${this.fontName}/stylesheet_${value}_DisplaySwap.css"/>`;
 
                                 return (
                                     <div className={styles.fontCopyDiv} key={value}>
@@ -252,7 +255,7 @@ class FontPage extends Component {
                              })
                           }
 
-                          {
+                          {/*{
                              this.state.font.styles.length === 1 ? null : (
                                  <div>
 
@@ -273,22 +276,22 @@ class FontPage extends Component {
                                     </div>
                                  </div>
                              )
-                          }
+                          }*/}
 
-                          <p className=" mt-5 font-weight-bold">{localization.typeface}</p>
+                          <p className=" mt-1 font-weight-bold">{localization.typeface}</p>
 
                           <div>
 
                              <div className={styles.codeCopy}>
                                 <button onClick={(event) => {
                                    event.currentTarget.innerHTML = `${localization.copyConfirm} ${this.emoji[getRandomInt(0, 6)]}`;
-                                   copyToClipboard(`* {\n\tfont-family: '${this.state.font.name}', ${this.state.font.type === "0" ? 'serif' : 'sans-serif'};\n}`);
+                                   copyToClipboard(`body {\n\tfont-family: '${this.state.font.name}', ${this.state.font.type === "0" ? 'serif' : 'sans-serif'};\n}`);
                                 }}>
                                    <i className="far fa-copy"/> {localization.copy}
                                 </button>
 
                                 <SyntaxHighlighter language='css'
-                                                   style={atomDark}>{`* {\n\tfont-family: '${this.state.font.name}', `
+                                                   style={atomDark}>{`body {\n\tfont-family: '${this.state.font.name}', `
                                 + `${this.state.font.type === "0" ? 'serif' : 'sans-serif'};\n}`}</SyntaxHighlighter>
                              </div>
                           </div>
