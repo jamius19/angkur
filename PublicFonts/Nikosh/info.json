@@ -1,0 +1,16 @@
+{
+  "fonts": [
+    {
+      "id": 3,
+      "name": "Nikosh",
+      "author": "Omicron Lab",
+      "type": "0",
+      "styles": [
+        "Normal"
+      ],
+      "file": [
+        "hinted-Nikosh.ttf"
+      ]
+    }
+  ]
+}
